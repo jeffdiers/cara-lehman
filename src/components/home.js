@@ -82,8 +82,6 @@ export default class Home extends React.Component {
 
                             {this._renderBody()}
 
-
-
                         </div>
                     </main>
                     <footer>
