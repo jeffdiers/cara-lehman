@@ -16,7 +16,7 @@ img.my-logo {
 
 /* Nav */
 nav {
-  background: #F7F06D;
+  background: #F2ED6D;
   z-index: 2;
 }
 
@@ -80,7 +80,7 @@ a.nav-link:active:before {
 
 /* Main */
 .main-container {
-  background: #F7F06D;
+  background: #F2ED6D;
   margin-top: -48px;
   position: relative;
   width: 100%;
@@ -138,7 +138,7 @@ img.my-logo {
   margin-right: auto;
   max-width: 960px;
   position: absolute;
-  top: 95%;
+  top: 80%;
   left: 50%;
   align-content: center;
   transform: translate(-50%, -50%);
@@ -179,6 +179,10 @@ img.social-icon {
 
   img.my-logo {
     width: 100%
+  }
+
+  .social-icons-row {
+    top: 94%;
   }
 }
 

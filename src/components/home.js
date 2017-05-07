@@ -30,6 +30,7 @@ export default class Home extends React.Component {
         if(this.state.view === "About")
 
             return (
+                <div>
                     <div className="splash-container">
                         <section className="hero">
                             <h1 className="hero-headline">
@@ -54,13 +55,19 @@ export default class Home extends React.Component {
                             <img className="my-logo" src="img/iconcode.svg" />
                         </section>
                     </div>
+                        <section className="social-icons-row">
+                            <a href="https://github.com/jeffdiers"><img className="social-icon" src="img/git.svg" /></a>
+                            <a href="https://www.instagram.com/jeffdiers/"><img className="social-icon" src="img/ig.svg" /></a>
+                            <a href="https://www.linkedin.com/in/jeff-diers/"><img className="social-icon" src="img/in.svg" /></a>
+                        </section>
+                    </div>
             )
 
             else if(this.state.view === "Projects" || this.state.view === "Resume")
 
                 return (
                     <div className="projects-container">
-                        <h1>Comming soon :)</h1>
+                        <h1>Coming soon :)</h1>
                     </div>
                 )
     }
@@ -85,13 +92,7 @@ export default class Home extends React.Component {
                         </div>
                     </main>
                     <footer>
-                        <div className="social">
-                            <section className="social-icons-row">
-                                <a href="https://github.com/jeffdiers"><img className="social-icon" src="img/git.svg" /></a>
-                                <a href="https://www.instagram.com/jeffdiers/"><img className="social-icon" src="img/ig.svg" /></a>
-                                <a href="https://www.linkedin.com/in/jeff-diers/"><img className="social-icon" src="img/in.svg" /></a>
-                            </section>
-                        </div>
+
                     </footer>
                 </div>
             )
