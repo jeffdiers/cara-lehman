@@ -1,3 +1,4 @@
+/****************** General Styling *******************/
 body {
   margin: 0;
   padding: 0;
@@ -6,8 +7,9 @@ body {
   color: #231f56;
 }
 
-h1 {
+h1.hero-headline {
   font-family: 'Georgia', sans-serif;
+  text-shadow: 1px 1px 0px #DB504A
 }
 
 img.my-logo {
@@ -18,7 +20,10 @@ p {
   font-size: 11pt;
 }
 
-/* Nav */
+
+
+/********************************************************/
+/******************** Nav Styling ***********************/
 nav {
   background: #F2ED6D;
   z-index: 2;
@@ -57,7 +62,7 @@ a.nav-link:before {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #000;
+  background-color: #DB504A;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -84,15 +89,16 @@ a.nav-link:active:before {
 }
 
 
-/* Main */
+
+/********************************************************/
+/****************** Main Page Styling *******************/
 .main-container {
   background: #F2ED6D;
-  margin-top: -48px;
   position: relative;
   width: 100%;
-  height: 99.5vh;
   min-height: 480px;
-  z-index: -1;
+  z-index: 1;
+  min-height: calc(100vh - 52px);
 }
 
 .splash-container {
@@ -102,7 +108,7 @@ a.nav-link:active:before {
   width: 92.30769%;
   max-width: 960px;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
     animation: fadein 2s;
@@ -148,6 +154,7 @@ img.my-logo {
   top: 80%;
   left: 50%;
   align-content: center;
+  z-index: 5;
   transform: translate(-50%, -50%);
     animation: fadein 2s;
     -moz-animation: fadein 2s; /* Firefox */
@@ -159,6 +166,22 @@ img.social-icon {
   width: 30px;
   margin: 0 10px 0 10px;
   opacity: .98;
+}
+
+.float {
+  -webkit-transition:all .3s ease-out;
+  -moz-transition:all .3s ease-out;
+  -ms-transition:all .3s ease-out;
+  -o-transition:all .3s ease-out;
+  transition:all .3s ease-out;
+}
+
+.float:hover {
+  -webkit-transform:translate(0px,-8px);
+  -moz-transform:translate(0px,-8px);
+  -ms-transform:translate(0px,-8px);
+  -o-transform:translate(0px,-8px);
+  transform:translate(0px,-8px);
 }
 
 
@@ -197,16 +220,115 @@ img.social-icon {
   }
 }
 
-/* Projects */
+
+
+/********************************************************/
+/***************** Project Dex Styling ******************/
+.projects-nav {
+  justify-content: flex-end;
+}
+
 .projects-container {
   margin-left: auto;
   margin-right: auto;
+  padding: 2px;
   width: 92.30769%;
   max-width: 960px;
+    animation: fadein_pro 2s;
+    -moz-animation: fadein_pro 2s; /* Firefox */
+    -webkit-animation: fadein_pro 2s; /* Safari and Chrome */
+    -o-animation: fadein_pro 2s; /* Opera */
+}
+
+.projects-height {
+  min-height: calc(100vh - 52px);
+}
+
+.project-list {
+  margin-top: 30px;
+  margin-bottom: 90px;
+  height: 300px;
+}
+
+.project-image-container {
+  border-radius: 3px;
+  float: left;
+  margin-right: 10%;
+  width: 50%;
+}
+
+.description-container {
+  float: left;
+  width: 40%;
+}
+
+.project-img {
+  display: block;
+  top: -12.5px;
+  left: -12.5px;
+  max-height: calc(100% + 25px);
+  max-width: calc(100% + 25px);
+  height: calc(100% + 25px);
+  width: calc(100% + 25px);
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+}
+
+.border {
+  border-width: 4px;
+  border-style: solid;
+  border-color: #231f56;
+  border-radius: 3px;
+}
+
+.project-buttons-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.project-button {
+  margin: 10px;
+  /*width: 100px*/
+}
+
+.img-container{
+  position: relative;
+  height: 300px;
+}
+
+@media (max-width: 768px){
+  .projects-container {
+    padding: 8px;
+    width: auto;
+  }
+  .project-list {
+    margin-bottom: 50px;
+    height: auto;
+  }
+
+  .img-container{
+    position: relative;
+    height: 39vh;
+  }
+
+  .project-image-container {
+    float: none;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .description-container {
+    float: none;
+    margin-top: 36px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2px;
+    width: 92.30769%;
+  }
 }
 
 
@@ -214,6 +336,39 @@ img.social-icon {
 
 
 @keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadein_pro {
     from {
         opacity:0;
     }

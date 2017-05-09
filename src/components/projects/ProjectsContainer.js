@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import ProjectDex from './ProjectDex'
+// import { Grid } from 'semantic-ui-react'
 
 
 export class ProjectsContainer extends React.Component {
@@ -32,17 +33,13 @@ export class ProjectsContainer extends React.Component {
 
     render () {
         if (this.props.data.loading) {
-            return (<div></div>)
+            return (<div>wut</div>)
         }
 
         if (this.props.data.error) {
             console.log(this.props.data.error)
             return (<div>An unexpected error occurred</div>)
         }
-
-        const tagItems = this.props.data.allTags.map((tag) => 
-            <option key={tag.id} value={tag.techTags}>{tag.techTags}</option>
-        )
 
         return (
             <div>

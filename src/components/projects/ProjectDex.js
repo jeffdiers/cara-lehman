@@ -14,6 +14,13 @@ export class ProjectDex extends React.Component {
     }
 
     render() {
+        if (this.props.data.loading) {
+            return (
+                <div>
+                    <h1>hol up</h1>
+                </div>
+            )
+        }
 
         if (this.props.data.error) {
             console.log(this.props.data.error)
@@ -21,14 +28,35 @@ export class ProjectDex extends React.Component {
         }
 
         const porjectItems = this.props.data.allProjects.map((project) => 
-            <div key={project.id}>
-                <h3>{project.title}</h3>
-                <Image src={project.imgUrl} alt={project.title} />
-            </div>
-        )
+                        <article className="project-list">
+                            <section className="project-image-container">
+                                <div className="border img-container">
+                                    <div className="project-img" style={{backgroundImage: 'url(img/face.JPG)'}}></div>
+                                </div>
+                            </section>
+                            <section className="description-container">
+                                <h1 className="description-title hero-headline">
+                                    {project.title}
+                                </h1>
+                                <div className="description-copy">
+                                    <p>
+                                        Description. Lorem ipsum dolor sit amet, wisi dicunt ancillae his eu, eam vidit possit ut. Te diam mnesarchum scribentur vel, tation putant ad per. In officiis intellegat reformidans est. Mel no quas harum, mentitum laboramus mediocritatem vel ea, vim eu vulputate definitionem.
+                                    </p>
+                                    <div className="project-buttons-container">
+                                        <a className="project-button" href="#">Github</a>
+                                        <a className="project-button" href="#">Website</a>
+                                    </div>
+                                </div>
+                            </section>
+                        </article>
+                    )
 
         return (
-            <div container columns={5}>{porjectItems}</div>
+            <div className="projects-height">
+                <div className="projects-container">
+                    {porjectItems}
+                </div>
+            </div>
         )
     }
 
