@@ -17,7 +17,6 @@ export class ProjectDex extends React.Component {
         if (this.props.data.loading) {
             return (
                 <div>
-                    <h1>hol up</h1>
                 </div>
             )
         }
@@ -31,7 +30,7 @@ export class ProjectDex extends React.Component {
                         <article className="project-list">
                             <section className="project-image-container">
                                 <div className="border img-container">
-                                    <div className="project-img" style={{backgroundImage: 'url(img/face.JPG)'}}></div>
+                                    <div className="project-img" style={{backgroundImage: "url(" + project.imgUrl + ")"}}></div>
                                 </div>
                             </section>
                             <section className="description-container">
@@ -43,8 +42,8 @@ export class ProjectDex extends React.Component {
                                         Description. Lorem ipsum dolor sit amet, wisi dicunt ancillae his eu, eam vidit possit ut. Te diam mnesarchum scribentur vel, tation putant ad per. In officiis intellegat reformidans est. Mel no quas harum, mentitum laboramus mediocritatem vel ea, vim eu vulputate definitionem.
                                     </p>
                                     <div className="project-buttons-container">
-                                        <a className="project-button" href="#">Github</a>
-                                        <a className="project-button" href="#">Website</a>
+                                        <a className="project-button" href={project.gitHubUrl} target="_blank">Github</a>
+                                        {project.projectUrl === null ? null : <a className="project-button" href={project.projectUrl} target="_blank">Website</a>}
                                     </div>
                                 </div>
                             </section>
@@ -72,6 +71,8 @@ const ProjectQuery = gql`
             title
             id
             imgUrl
+            projectUrl
+            gitHubUrl
         }
     }`
 

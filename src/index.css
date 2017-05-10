@@ -9,15 +9,11 @@ body {
 
 h1.hero-headline {
   font-family: 'Georgia', sans-serif;
-  text-shadow: 1px 1px 0px #DB504A
+  /*text-shadow: 1px 1px 0px #DB504A*/
 }
 
 img.my-logo {
   width: 300px;
-}
-
-p {
-  font-size: 11pt;
 }
 
 
@@ -25,7 +21,7 @@ p {
 /********************************************************/
 /******************** Nav Styling ***********************/
 nav {
-  background: #F2ED6D;
+  background: #FFFC00;
   z-index: 2;
 }
 
@@ -93,7 +89,7 @@ a.nav-link:active:before {
 /********************************************************/
 /****************** Main Page Styling *******************/
 .main-container {
-  background: #F2ED6D;
+  background: #FFFC00;
   position: relative;
   width: 100%;
   min-height: 480px;
@@ -131,6 +127,7 @@ a.nav-link:active:before {
 .hero-copy {
   line-height: 1.25;
   margin: 1em 0 0;
+  font-size: 11pt;
 }
 
 .bang {
@@ -289,14 +286,24 @@ img.social-icon {
   justify-content: space-around;
 }
 
-.project-button {
-  margin: 10px;
-  /*width: 100px*/
-}
-
 .img-container{
   position: relative;
   height: 300px;
+}
+
+a.project-button {
+  color: #231f56;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  line-height: 52px;
+  margin: 10px;
+  font-size: 11pt;
+  font-weight: 400;
+}
+
+a.project-button:hover {
+  color: #DB504A
 }
 
 @media (max-width: 768px){

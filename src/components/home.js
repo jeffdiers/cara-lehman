@@ -99,21 +99,17 @@ export default class Home extends React.Component {
             else if(this.state.view === "Projects")
                 
                 return (
-                   <div className="splash-height">
-                        <div className="projects-container">
-                            <h1 className="hero-headline">Coming soon :)</h1>
-                        </div>
-                    </div>
+                            <ProjectDex hashtag={this.state.hashtag} />
                 )
 
             else if(this.state.view === "Resume")
 
                 return (
-                    <div className="splash-height">
+                   <div className="splash-height">
                         <div className="projects-container">
                             <h1 className="hero-headline">Coming soon :)</h1>
                         </div>
-                    </div>
+                    </div>  
                 )
     }
 
