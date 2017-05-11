@@ -22,10 +22,10 @@ export default class Home extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(() => {
-            this.setState({ view: "About" });
-        }, 1000);
-        // this.setState({ view: "Projects" });
+        // setTimeout(() => {
+        //     this.setState({ view: "About" });
+        // }, 1000);
+        this.setState({ view: "About" });
         console.log(this.props.data)
     }
 
