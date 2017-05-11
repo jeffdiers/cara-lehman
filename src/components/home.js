@@ -84,7 +84,7 @@ export default class Home extends React.Component {
                             </div>
                         </section>
                         <section className="bang">
-                            <img className="my-logo" src="img/iconcode.svg" />
+                            <img className="logo" src="img/iconcode.svg" />
                         </section>
                     </div>
                     <section className="social-icons-row">
@@ -114,19 +114,31 @@ export default class Home extends React.Component {
     }
 
     render () {
+        let container_style = this.state.view === "Projects" ? "main-container-white" : "main-container"
+        let globalnav_class = this.state.view === "About" ? "onhome" : ""
 
             return (
                 <div>
-                    <nav>
-                        <div className="nav-container">
-                            <a className={this.state.view === "About" ? "nav-link active" : "nav-link"} onClick={this._handleChange_nav}>About</a>
-                            <a className={this.state.view === "Projects" ? "nav-link active" : "nav-link"} onClick={this._handleChange_nav}>Projects</a>
-                            <a className={this.state.view === "Resume" ? "nav-link active" : "nav-link"} onClick={this._handleChange_nav}>Resume</a>
+
+                    <nav className={globalnav_class}>
+
+                        <div className="globalnav-container">
+                            <span className="globalnav-home">
+                                <a className="globalnav-home-link" href="#">
+                                    <img className="logonav" src="img/iconcode.svg" />
+                                </a>
+                            </span>
+                            <div className="globalnav-slideout">
+
+                                <a className={this.state.view === "About" ? "globalnav-item active" : "globalnav-item"} onClick={this._handleChange_nav}>About</a>
+                                <a className={this.state.view === "Projects" ? "globalnav-item active" : "globalnav-item"} onClick={this._handleChange_nav}>Projects</a>
+                                <a className={this.state.view === "Resume" ? "globalnav-item active" : "globalnav-item"} onClick={this._handleChange_nav}>Resume</a>
+                            </div>
                         </div>
                     </nav>
 
                     <main>
-                        <div className="main-container">
+                        <div className={container_style}>
 
                             {this._renderBody()}
 

@@ -16,6 +16,10 @@ img.my-logo {
   width: 300px;
 }
 
+.white {
+  background-color: white;
+}
+
 
 
 /********************************************************/
@@ -25,33 +29,72 @@ nav {
   z-index: 2;
 }
 
-.nav-container {
+.logonav {
+  width: 69px;
+  /*top: 5px;*/
+  line-height: 44px;
+  padding: 2px 2px 0;
+  position: absolute;
+}
+
+.globalnav-container {
   margin-left: auto;
   margin-right: auto;
+  height: 52px;
   width: 92.30769%;
   max-width: 960px;
+  position: relative;
     animation: fadein 1s;
     -moz-animation: fadein 1s; /* Firefox */
     -webkit-animation: fadein 1s; /* Safari and Chrome */
     -o-animation: fadein 1s; /* Opera */
 }
 
-a.nav-link {
+nav.onhome .globalnav-home {
+  display: none;
+}
+
+.globalnav-home {
+  position: relative;
+  top: 10px;
+  z-index: 2;
+  animation: all .15s ease both;
+}
+
+.globalnav-home, .globalnav-item {
+    margin-right: 5vw;
+}
+
+.onhome .globalnav-item {
+  top: 0px;
+}
+
+.globalnav-item {
   color: #231f56;
   cursor: pointer;
   position: relative;
   text-decoration: none;
   line-height: 52px;
-  margin-right: 75px;
   font-size: 11pt;
   font-weight: 400;
+  top: -20px;
 }
 
-a.nav-link:hover {
+.onhome .globalnav-slideout {
+    transform: translateX(0px);
+    top: 0px;
+}
+
+.globalnav-slideout {
+    transform: translateX(135px);
+    transition: all .15s ease-in-out;
+}
+
+.globalnav-item:hover {
   color: #231f56;
 }
 
-a.nav-link:before {
+.globalnav-item:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -66,22 +109,28 @@ a.nav-link:before {
   transition: all 0.3s ease-in-out 0s;
 }
 
-a.nav-link:hover:before {
+.globalnav-item:hover:before {
   color: #231f56;
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
 
-a.nav-link.active:before {
+.globalnav-item.active:before {
   color: #231f56;
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
 
-a.nav-link:active:before {
+.globalnav-item:active:before {
   color: #231f56;
+}
+
+@media (max-width: 1010px) {
+  .globalnav-slideout {
+      transform: translateX(15vh);
+  }
 }
 
 
@@ -138,7 +187,7 @@ a.nav-link:active:before {
   color: #231f56;
 }
 
-img.my-logo {
+.logo {
   width: 60%;
   border-radius: 10px;
 }
@@ -242,9 +291,16 @@ img.social-icon {
 }
 
 .project-list {
-  margin-top: 30px;
+  margin-top: 90px;
   margin-bottom: 90px;
   height: 300px;
+}
+
+hr.project-divider {
+	height: 1px;
+  background: #231f56;
+  border-style: none;
+  width: 80%
 }
 
 .project-image-container {
@@ -273,12 +329,12 @@ img.social-icon {
   background-position: center;
 }
 
-.border {
+/*.border {
   border-width: 4px;
   border-style: solid;
   border-color: #231f56;
   border-radius: 3px;
-}
+}*/
 
 .project-buttons-container {
   align-items: center;

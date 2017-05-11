@@ -27,7 +27,8 @@ export class ProjectDex extends React.Component {
         }
 
         const porjectItems = this.props.data.allProjects.map((project) => 
-                        <article className="project-list">
+                    <div>
+                        <article className="project-list" key={project.id}>
                             <section className="project-image-container">
                                 <div className="border img-container">
                                     <div className="project-img" style={{backgroundImage: "url(" + project.imgUrl + ")"}}></div>
@@ -39,15 +40,18 @@ export class ProjectDex extends React.Component {
                                 </h1>
                                 <div className="description-copy">
                                     <p>
-                                        Description. Lorem ipsum dolor sit amet, wisi dicunt ancillae his eu, eam vidit possit ut. Te diam mnesarchum scribentur vel, tation putant ad per. In officiis intellegat reformidans est. Mel no quas harum, mentitum laboramus mediocritatem vel ea, vim eu vulputate definitionem.
+                                        {project.description}
                                     </p>
                                     <div className="project-buttons-container">
-                                        <a className="project-button" href={project.gitHubUrl} target="_blank">Github</a>
-                                        {project.projectUrl === null ? null : <a className="project-button" href={project.projectUrl} target="_blank">Website</a>}
+                                        <a className="project-button" href={project.gitHubUrl} target="_blank"><i className="fa fa-github fa-fw"></i>View Github</a>
+                                        {project.projectUrl === null ? null : <a className="project-button" href={project.projectUrl} target="_blank"><i className="fa fa-link fa-fw"></i>View Live</a>}
                                     </div>
                                 </div>
                             </section>
                         </article>
+                        <hr className="project-divider"/>
+                    </div>
+
                     )
 
         return (
@@ -67,12 +71,17 @@ const ProjectQuery = gql`
             tags_some: {
                 techTags: $hashtag
             }
-        }) {
+        }, orderBy: createdAt_DESC) {
             title
             id
             imgUrl
             projectUrl
             gitHubUrl
+            description
+            tags {
+                id
+                techTags
+          }
         }
     }`
 
