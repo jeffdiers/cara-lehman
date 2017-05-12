@@ -143,7 +143,6 @@ nav.onhome .globalnav-home {
   background: #FFFC00;
   position: relative;
   width: 100%;
-  min-height: 480px;
   z-index: 1;
   min-height: calc(100vh - 52px);
 }
@@ -273,6 +272,16 @@ img.social-icon {
     top: 94%;
   }
 }
+
+@media (max-height: 735px) {
+  .main-container {
+      height: 500px;
+  }
+  .globalnav-slideout {
+    transform: translateX(100px)
+  }
+}
+
 
 
 
