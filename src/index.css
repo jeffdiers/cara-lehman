@@ -282,9 +282,6 @@ img.social-icon {
   }
 }
 
-
-
-
 /********************************************************/
 /***************** Project Dex Styling ******************/
 .projects-nav {
@@ -421,6 +418,15 @@ a.project-button:hover {
   }
 }
 
+/********************************************************/
+/******************** Resume Styling ********************/
+.resume-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2px;
+  width: 92.30769%;
+  max-width: 960px;
+}
 
 
 

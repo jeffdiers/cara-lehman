@@ -106,15 +106,17 @@ export default class Home extends React.Component {
 
                 return (
                    <div className="splash-height">
-                        <div className="projects-container">
-                            <h1 className="hero-headline">Coming soon :)</h1>
+                        <div className="resume-container">
+                            <object data="img/Resume.pdf" type="application/pdf" width="95%" height="900px">
+                                <p><b>Get a new browser yo!</b> This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
+                            </object>                        
                         </div>
                     </div>  
                 )
     }
 
     render () {
-        let container_style = this.state.view === "Projects" ? "main-container-white" : "main-container"
+        let container_style = this.state.view === "About" ? "main-container" : ""
         let globalnav_class = this.state.view === "About" ? "onhome" : ""
 
             return (
