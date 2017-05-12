@@ -181,6 +181,11 @@ nav.onhome .globalnav-home {
   font-size: 11pt;
 }
 
+.contactlink {
+    text-decoration: none;
+    color: #231f56;
+}
+
 .bang {
   float: left;
   margin-top: 52px;
@@ -243,6 +248,7 @@ img.social-icon {
     margin-right: auto;
     width: 87.5%;
     max-width: 30em;
+    top: 40%;
   }
 
   .hero {
@@ -392,7 +398,7 @@ a.project-button:hover {
   }
 
   .project-img {
-    width: 98vw;
+    width: 95vw;
   } 
 
   .description-container {

@@ -78,8 +78,8 @@ export default class Home extends React.Component {
                                 </p>
                                 <p>
                                     Drop me a line <br />
-                                    720-987-3868 <br />
-                                    jeff.diers@gmail.com <br />
+                                    <a className="contactlink" href="tel:720-987-3868">720-987-3868</a> <br />
+                                    <a className="contactlink" href="mailto:jeff.diers@gmail.com?Subject=Hello%20friend" target="_top">jeff.diers@gmail.com</a> <br />
                                 </p>
                             </div>
                         </section>
