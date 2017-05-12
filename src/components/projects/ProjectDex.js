@@ -30,9 +30,7 @@ export class ProjectDex extends React.Component {
                     <div>
                         <article className="project-list" key={project.id}>
                             <section className="project-image-container">
-                                <div className="border img-container">
-                                    <div className="project-img" style={{backgroundImage: "url(" + project.imgUrl + ")"}}></div>
-                                </div>
+                                <img className="project-img" src={project.imgUrl} />
                             </section>
                             <section className="description-container">
                                 <h1 className="description-title hero-headline">
@@ -94,3 +92,9 @@ const ProjectQuery = gql`
 })(ProjectDex)
 
 export default ProjectDexWithData
+
+
+// border img div
+// {/*<div className="border img-container">
+//     <div className="project-img" style={{backgroundImage: "url(" + project.imgUrl + ")"}}></div>
+// </div>*/}
