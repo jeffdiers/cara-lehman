@@ -32,7 +32,7 @@ nav {
 
 .logonav {
   width: 69px;
-  /*top: 5px;*/
+  top: 10px;
   line-height: 44px;
   padding: 2px 2px 0;
   position: absolute;
@@ -57,7 +57,6 @@ nav.onhome .globalnav-home {
 
 .globalnav-home {
   position: relative;
-  top: 10px;
   z-index: 2;
   animation: all .15s ease both;
 }
@@ -426,6 +425,7 @@ a.project-button:hover {
   padding: 2px;
   width: 92.30769%;
   max-width: 960px;
+  height: 100vh
 }
 
 

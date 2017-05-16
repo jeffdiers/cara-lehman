@@ -107,9 +107,7 @@ export default class Home extends React.Component {
                 return (
                    <div className="splash-height">
                         <div className="resume-container">
-                            <object data="img/Resume.pdf" type="application/pdf" width="95%" height="900px">
-                                <p><b>Get a new browser yo!</b> This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-                            </object>                        
+                            <iframe src="https://indd.adobe.com/view/f0a5f958-58b7-4320-825c-ae3b8b030e71" width="100%" height="740px"  />
                         </div>
                     </div>  
                 )
