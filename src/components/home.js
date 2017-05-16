@@ -107,7 +107,7 @@ export default class Home extends React.Component {
                 return (
                    <div className="splash-height">
                         <div className="resume-container">
-                            <iframe src="https://indd.adobe.com/view/f0a5f958-58b7-4320-825c-ae3b8b030e71" width="100%" height="740px"  />
+                            <iframe src="https://indd.adobe.com/view/f0a5f958-58b7-4320-825c-ae3b8b030e71" width="100%" height="90%" />
                         </div>
                     </div>  
                 )
