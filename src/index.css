@@ -193,6 +193,9 @@ nav.onhome .globalnav-home {
   .globalnav-slideout {
       transform: translateX(15vh);
   }
+}
+
+@media (max-width: 767px) {
   .projects-filter-nav {
     top: 52px;
     background-color: #FFFC00;
