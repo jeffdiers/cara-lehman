@@ -28,6 +28,8 @@ nav {
   background: #FFFC00;
   z-index: 2;
   max-width: 100vw;
+  position: fixed;
+  width: 100vw;
 }
 
 .logonav {
@@ -138,6 +140,10 @@ nav.onhome .globalnav-home {
 
 /********************************************************/
 /****************** Main Page Styling *******************/
+.main {
+  padding-top: 52px;
+}
+
 .main-container {
   background: #FFFC00;
   position: relative;
@@ -300,20 +306,25 @@ img.social-icon {
 }
 
 .projects-height {
+  /*padding-top: 50px;*/
   min-height: calc(100vh - 52px);
 }
 
 .project-list {
-  margin-top: 90px;
-  margin-bottom: 90px;
+  /*margin-top: 90px;*/
+  margin-bottom: 10vh;
+  display: flex;
+  align-items: center;
   height: 300px;
+  padding: 10px
 }
 
 hr.project-divider {
 	height: 1px;
   background: #231f56;
   border-style: none;
-  width: 80%
+  width: 80%;
+  margin-Bottom: 10vh
 }
 
 .project-image-container {
@@ -372,7 +383,7 @@ a.project-button {
   position: relative;
   text-decoration: none;
   line-height: 52px;
-  margin: 10px;
+  /*margin: 10px;*/
   font-size: 11pt;
   font-weight: 400;
 }
@@ -387,6 +398,7 @@ a.project-button:hover {
     width: auto;
   }
   .project-list {
+    display: inline;
     margin-bottom: 50px;
     height: auto;
   }

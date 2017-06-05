@@ -114,7 +114,7 @@ export default class Home extends React.Component {
     }
 
     render () {
-        let container_style = this.state.view === "About" ? "main-container" : ""
+        let container_style = this.state.view === "About" ? "main-container main" : "main"
         let globalnav_class = this.state.view === "About" ? "onhome" : ""
 
             return (
