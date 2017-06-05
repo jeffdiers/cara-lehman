@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ProjectsContainer from './projects/ProjectsContainer.js'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
@@ -9,16 +9,20 @@ import ProjectDex from './projects/ProjectDex'
 };
 
 
-export default class Home extends React.Component {
+export default class Home extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
             view: "",
-            hashtag: "#Javascript"
+            hashtag: "#JavaScript",
+            showDropdown: false
         }
         
         this._handleChange_nav = this._handleChange_nav.bind(this)
+        this._handleClickLogo = this._handleClickLogo.bind(this)
+        this._dropdown = this._dropdown.bind(this)
+        this._filterProjects = this._filterProjects.bind(this)
     }
 
     componentDidMount() {
@@ -33,22 +37,48 @@ export default class Home extends React.Component {
         this.setState({
             view: event.target.innerHTML
         })
-                console.log(this.props)
-
-        console.log(event.target.innerHTML)
     }
 
-    // _handleChange_projects(event) {
-    //     this.setState({
-    //         hashtag: event.target.innerHTML
-    //     })
-    //     console.log(this.state)
-    // }
+    _handleClickLogo(event) {
+        this.setState ({
+            view: "About"
+        })
+    }
 
-    _renderNav = () => {
+    _filterProjects(event) {
+        this.setState({
+            hashtag: event.target.innerHTML,
+            showDropdown: false
+        })
+        console.log(this.state)
+    }
+
+    _dropdown(event) {
+        this.setState({
+            showDropdown: true
+        })
+    }
+
+    _renderProjectsFilter = () => {
+        let toggleDropdown = this.state.showDropdown ? "dropdown-content show" : "dropdown-content"
         if(this.state.view === "Projects") 
             return (
-                <a className="projects-nav">Projects filtered by Javascript</a>
+                <div>
+                    <span className="projects-filter-nav">Filter projects by <div className="dropdown">
+                            <a onClick={this._dropdown} className="dropbtn"> {this.state.hashtag} <i className="fa fa-caret-down" aria-hidden="true"></i></a>
+                            <div id="myDropdown" className={toggleDropdown}>
+                                <a onClick={this._filterProjects}>#JavaScript</a>
+                                <a onClick={this._filterProjects}>#React</a>
+                                <a onClick={this._filterProjects}>#Node.JS</a>
+                                <a onClick={this._filterProjects}>#Express</a>
+                                <a onClick={this._filterProjects}>#PostgreSQL</a>
+                                <a onClick={this._filterProjects}>#AngularJS</a>
+                                <a onClick={this._filterProjects}>#jQuery</a>
+                            </div>
+                        </div> 
+                    </span>
+
+                </div>
             )
         else 
             return (
@@ -87,7 +117,7 @@ export default class Home extends React.Component {
                             <img className="logo" src="img/iconcode.svg" />
                         </section>
                     </div>
-                    <section className="social-icons-row">
+                    <section className="social-icons-row-main">
                         <a href="https://github.com/jeffdiers" target="_blank"><img className="social-icon float" src="img/git.svg" /></a>
                         <a href="https://www.instagram.com/jeffdiers/" target="_blank"><img className="social-icon float" src="img/ig.svg" /></a>
                         <a href="https://www.linkedin.com/in/jeff-diers/" target="_blank"><img className="social-icon float" src="img/in.svg" /></a>
@@ -98,9 +128,7 @@ export default class Home extends React.Component {
 
             else if(this.state.view === "Projects")
                 
-                return (
-                            <ProjectDex hashtag={this.state.hashtag} />
-                )
+                return ( <ProjectDex hashtag={this.state.hashtag} /> )
 
             else if(this.state.view === "Resume")
 
@@ -124,8 +152,8 @@ export default class Home extends React.Component {
 
                         <div className="globalnav-container">
                             <span className="globalnav-home">
-                                <a className="globalnav-home-link" href="#">
-                                    <img className="logonav" src="img/iconcode.svg" />
+                                <a className="globalnav-home-link" onClick={ this._handleClickLogo }>
+                                    <img alt="logo" className="logonav" src="img/iconcode.svg" />
                                 </a>
                             </span>
                             <div className="globalnav-slideout">
@@ -133,7 +161,9 @@ export default class Home extends React.Component {
                                 <a className={this.state.view === "About" ? "globalnav-item active" : "globalnav-item"} onClick={this._handleChange_nav}>About</a>
                                 <a className={this.state.view === "Projects" ? "globalnav-item active" : "globalnav-item"} onClick={this._handleChange_nav}>Projects</a>
                                 <a className={this.state.view === "Resume" ? "globalnav-item active" : "globalnav-item"} onClick={this._handleChange_nav}>Resume</a>
+                                
                             </div>
+                            {this._renderProjectsFilter()}
                         </div>
                     </nav>
 

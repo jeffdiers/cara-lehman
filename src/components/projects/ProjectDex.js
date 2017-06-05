@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 
-export class ProjectDex extends React.Component {
+export class ProjectDex extends Component {
+
 
     static propTypes = {
         data: React.PropTypes.shape({
@@ -27,8 +28,8 @@ export class ProjectDex extends React.Component {
         }
 
         const porjectItems = this.props.data.allProjects.map((project) => 
-                    <div>
-                        <article className="project-list" key={project.id}>
+                    <div key={project.id}>
+                        <article className="project-list">
                             <section className="project-image-container">
                                 <img className="project-img" src={project.imgUrl} />
                             </section>
@@ -56,6 +57,11 @@ export class ProjectDex extends React.Component {
             <div className="projects-height">
                 <div className="projects-container">
                     {porjectItems}
+                    <section className="social-icons-row-projects">
+                        <a href="https://github.com/jeffdiers" target="_blank"><img className="social-icon float" src="img/git.svg" /></a>
+                        <a href="https://www.instagram.com/jeffdiers/" target="_blank"><img className="social-icon float" src="img/ig.svg" /></a>
+                        <a href="https://www.linkedin.com/in/jeff-diers/" target="_blank"><img className="social-icon float" src="img/in.svg" /></a>
+                    </section>
                 </div>
             </div>
         )
@@ -84,12 +90,12 @@ const ProjectQuery = gql`
     }`
 
  const ProjectDexWithData = graphql(ProjectQuery, {
-    options: (ownProps) => ({
-        variables: {
-            hashtag: ownProps.hashtag
-        }
-    })
-})(ProjectDex)
+        options: (ownProps) => ({
+            variables: {
+                hashtag: ownProps.hashtag
+            }
+        })
+    })(ProjectDex)
 
 export default ProjectDexWithData
 
