@@ -43,7 +43,7 @@ nav {
 .globalnav-container {
   margin-left: auto;
   margin-right: auto;
-  height: 52px;
+  height: 46px;
   width: 92.30769%;
   max-width: 960px;
   position: relative;
@@ -76,7 +76,7 @@ nav.onhome .globalnav-home {
   cursor: pointer;
   position: relative;
   text-decoration: none;
-  line-height: 52px;
+  line-height: 46px;
   font-size: 11pt;
   font-weight: 400;
   top: -20px;
@@ -138,8 +138,8 @@ nav.onhome .globalnav-home {
   font-weight: 400;
   right: 0px;
   top: 0px;
-  line-height: 44px;
-  padding: 2px 2px 0;
+  line-height: 42px;
+  /*padding: 2px 2px 0;*/
 }
 
 /* Dropdown Button */
@@ -197,7 +197,7 @@ nav.onhome .globalnav-home {
 
 @media (max-width: 767px) {
   .projects-filter-nav {
-    top: 52px;
+    top: 46px;
     background-color: #FFFC00;
     right: -4vw;
     padding-left: 12px;
@@ -210,7 +210,7 @@ nav.onhome .globalnav-home {
 /********************************************************/
 /****************** Main Page Styling *******************/
 .main {
-  padding-top: 52px;
+  padding-top: 46px;
 }
 
 .main-container {
@@ -218,7 +218,7 @@ nav.onhome .globalnav-home {
   position: relative;
   width: 100%;
   z-index: 1;
-  min-height: calc(100vh - 52px);
+  min-height: calc(100vh - 46px);
 }
 
 .splash-container {
@@ -261,7 +261,7 @@ nav.onhome .globalnav-home {
 
 .bang {
   float: left;
-  margin-top: 52px;
+  margin-top: 46px;
   text-align: right;
   width: 60%;
   color: #231f56;

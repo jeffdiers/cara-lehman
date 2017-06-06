@@ -41,6 +41,12 @@ export class ProjectDex extends Component {
                                     <p>
                                         {project.description}
                                     </p>
+                                    <span>
+                                    {project.tags.map((tag, index) => { 
+                                        return <a key={tag.id}>
+                                            {tag.techTags !== 'All' && tag.techTags !== 'Front-end' && tag.techTags !== 'Full-stack' ? tag.techTags + "  " : null}  
+                                            </a> })}
+                                    </span>
                                     <div className="project-buttons-container">
                                         <a className="project-button" href={project.gitHubUrl} target="_blank"><i className="fa fa-github fa-fw"></i>View Github</a>
                                         {project.projectUrl === null ? null : <a className="project-button" href={project.projectUrl} target="_blank"><i className="fa fa-link fa-fw"></i>View Live</a>}
@@ -52,7 +58,7 @@ export class ProjectDex extends Component {
                     </div>
 
                     )
-
+console.log("techTags", this.props.data.allProjects[0].tags[0].techTags)
         return (
             <div className="projects-height">
                 <div className="projects-container">

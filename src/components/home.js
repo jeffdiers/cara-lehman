@@ -15,7 +15,7 @@ export default class Home extends Component {
         super(props)
         this.state = {
             view: "",
-            hashtag: "#JavaScript",
+            projectFilter: "All",
             showDropdown: false
         }
         
@@ -47,16 +47,14 @@ export default class Home extends Component {
 
     _filterProjects(event) {
         this.setState({
-            hashtag: event.target.innerHTML,
+            projectFilter: event.target.innerHTML,
             showDropdown: false
         })
         console.log(this.state)
     }
 
     _dropdown(event) {
-        this.setState({
-            showDropdown: true
-        })
+        this.state.showDropdown ? this.setState({ showDropdown: false }) : this.setState({ showDropdown: true})
     }
 
     _renderProjectsFilter = () => {
@@ -64,18 +62,14 @@ export default class Home extends Component {
         if(this.state.view === "Projects") 
             return (
                 <div>
-                    <span className="projects-filter-nav">Filter projects by <div className="dropdown">
-                            <a onClick={this._dropdown} className="dropbtn"> {this.state.hashtag} <i className="fa fa-caret-down" aria-hidden="true"></i></a>
+                    <span className="projects-filter-nav">Filter by  <div className="dropdown">
+                            <a onClick={this._dropdown} className="dropbtn"> {this.state.projectFilter} <i className="fa fa-caret-down" aria-hidden="true"></i></a>
                             <div id="myDropdown" className={toggleDropdown}>
-                                <a onClick={this._filterProjects}>#JavaScript</a>
-                                <a onClick={this._filterProjects}>#React</a>
-                                <a onClick={this._filterProjects}>#Node.JS</a>
-                                <a onClick={this._filterProjects}>#Express</a>
-                                <a onClick={this._filterProjects}>#PostgreSQL</a>
-                                <a onClick={this._filterProjects}>#AngularJS</a>
-                                <a onClick={this._filterProjects}>#jQuery</a>
+                                <a onClick={this._filterProjects}>All</a>
+                                <a onClick={this._filterProjects}>Full-stack</a>
+                                <a onClick={this._filterProjects}>Front-end</a>
                             </div>
-                        </div> 
+                        </div>
                     </span>
 
                 </div>
@@ -128,7 +122,7 @@ export default class Home extends Component {
 
             else if(this.state.view === "Projects")
                 
-                return ( <ProjectDex hashtag={this.state.hashtag} /> )
+                return ( <ProjectDex hashtag={this.state.projectFilter} /> )
 
             else if(this.state.view === "Resume")
 
