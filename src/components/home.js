@@ -1,13 +1,5 @@
 import React, { Component } from 'react'
-import ProjectsContainer from './projects/ProjectsContainer.js'
-import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
 import ProjectDex from './projects/ProjectDex'
-
- const divStyle = {
-                backgroundImage: 'url(img/face.JPG)',
-};
-
 
 export default class Home extends Component {
 
@@ -15,22 +7,21 @@ export default class Home extends Component {
         super(props)
         this.state = {
             view: "",
-            projectFilter: "All",
+            projectFilterTag: "All",
+            projectFilterType: "All",
             showDropdown: false
         }
         
         this._handleChange_nav = this._handleChange_nav.bind(this)
         this._handleClickLogo = this._handleClickLogo.bind(this)
         this._dropdown = this._dropdown.bind(this)
-        this._filterProjects = this._filterProjects.bind(this)
+        this._filterProjectsTag = this._filterProjectsTag.bind(this)
+        this._filterProjectsType = this._filterProjectsType.bind(this)
+        this._removeTag = this._removeTag.bind(this)
     }
 
     componentDidMount() {
-        // setTimeout(() => {
-        //     this.setState({ view: "About" });
-        // }, 1000);
         this.setState({ view: "About" });
-        console.log(this.props.data)
     }
 
     _handleChange_nav(event) {
@@ -45,12 +36,31 @@ export default class Home extends Component {
         })
     }
 
-    _filterProjects(event) {
+    _filterProjectsTag(event) {
         this.setState({
-            projectFilter: event.target.innerHTML,
-            showDropdown: false
+            projectFilterTag: event.target.innerHTML
         })
-        console.log(this.state)
+        console.log(this.state.projectFilterTag)
+    }
+
+    _filterProjectsType(event) {
+        if(event.target.innerHTML === 'All')
+            this.setState({
+                projectFilterType: event.target.innerHTML,
+                projectFilterTag: 'All',
+                showDropdown: false
+            })
+        else
+            this.setState({
+                projectFilterType: event.target.innerHTML,
+                showDropdown: false
+            })
+    }
+
+    _removeTag(event) {
+        this.setState({
+            projectFilterTag: "All"
+        })
     }
 
     _dropdown(event) {
@@ -62,12 +72,16 @@ export default class Home extends Component {
         if(this.state.view === "Projects") 
             return (
                 <div>
-                    <span className="projects-filter-nav">Filter by  <div className="dropdown">
-                            <a onClick={this._dropdown} className="dropbtn"> {this.state.projectFilter} <i className="fa fa-caret-down" aria-hidden="true"></i></a>
+                    <span className="projects-filter-nav">
+                        <a onClick={this._removeTag}>{this.state.projectFilterTag !== "All" ? <span className="filter-tag"><i className="fa fa-times" aria-hidden="true"></i> {this.state.projectFilterTag} </span>: null}</a>
+                            <div className="dropdown">
+                            <a onClick={this._dropdown} className="dropbtn"> {this.state.projectFilterType} <i className="fa fa-caret-down" aria-hidden="true"></i></a>
                             <div id="myDropdown" className={toggleDropdown}>
-                                <a onClick={this._filterProjects}>All</a>
-                                <a onClick={this._filterProjects}>Full-stack</a>
-                                <a onClick={this._filterProjects}>Front-end</a>
+                                <a onClick={this._filterProjectsType}>All</a>
+                                <a onClick={this._filterProjectsType}>Full-stack</a>
+                                <a onClick={this._filterProjectsType}>Front-end</a>
+                                <a onClick={this._filterProjectsType}>Web app</a>
+                                <a onClick={this._filterProjectsType}>Mobile app</a>
                             </div>
                         </div>
                     </span>
@@ -108,13 +122,13 @@ export default class Home extends Component {
                             </div>
                         </section>
                         <section className="bang">
-                            <img className="logo" src="img/iconcode.svg" />
+                            <img className="logo" src="img/iconcode.svg" alt="personal logo img" />
                         </section>
                     </div>
                     <section className="social-icons-row-main">
-                        <a href="https://github.com/jeffdiers" target="_blank"><img className="social-icon float" src="img/git.svg" /></a>
-                        <a href="https://www.instagram.com/jeffdiers/" target="_blank"><img className="social-icon float" src="img/ig.svg" /></a>
-                        <a href="https://www.linkedin.com/in/jeff-diers/" target="_blank"><img className="social-icon float" src="img/in.svg" /></a>
+                        <a href="https://github.com/jeffdiers" target="_blank"><img className="social-icon float" src="img/git.svg" alt="github logo img" /></a>
+                        <a href="https://www.instagram.com/jeffdiers/" target="_blank"><img className="social-icon float" src="img/ig.svg" alt="instagram logo img" /></a>
+                        <a href="https://www.linkedin.com/in/jeff-diers/" target="_blank"><img className="social-icon float" src="img/in.svg" alt="linkedin logo img" /></a>
                     </section>
 
                 </div>
@@ -122,7 +136,7 @@ export default class Home extends Component {
 
             else if(this.state.view === "Projects")
                 
-                return ( <ProjectDex hashtag={this.state.projectFilter} /> )
+                return ( <ProjectDex type={this.state.projectFilterType} hashtag={this.state.projectFilterTag} _filterProjectsTag={this._filterProjectsTag} _filterProjectsType={this._filterProjectsType} /> )
 
             else if(this.state.view === "Resume")
 
@@ -157,8 +171,11 @@ export default class Home extends Component {
                                 <a className={this.state.view === "Resume" ? "globalnav-item active" : "globalnav-item"} onClick={this._handleChange_nav}>Resume</a>
                                 
                             </div>
+
                             {this._renderProjectsFilter()}
+                            
                         </div>
+                        
                     </nav>
 
                     <main>

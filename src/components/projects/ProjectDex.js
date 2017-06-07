@@ -14,6 +14,16 @@ export class ProjectDex extends Component {
         }).isRequired,
     }
 
+    _intersperse(arr, sep) {
+        if (arr.length === 0) {
+            return [];
+        }
+
+        return arr.slice(1).reduce(function(xs, x, i) {
+            return xs.concat([sep, x]);
+        }, [arr[0]]);
+    }
+
     render() {
         if (this.props.data.loading) {
             return (
@@ -27,11 +37,19 @@ export class ProjectDex extends Component {
             return (<div>An unexpected error occurred</div>)
         }
 
-        const porjectItems = this.props.data.allProjects.map((project) => 
+        const porjectItems = this.props.data.allProjects.map((project) => {
+
+            let tagsArray = []
+            project.tags.map((tag, index) => {
+                return tag.techTags !== 'All' ? tagsArray.push(<a key={index} onClick={this.props._filterProjectsTag} className="tags">{tag.techTags}</a>) : null
+            })
+            tagsArray = this._intersperse(tagsArray, ", ")
+
+            return (
                     <div key={project.id}>
                         <article className="project-list">
                             <section className="project-image-container">
-                                <img className="project-img" src={project.imgUrl} />
+                                <img className="project-img" src={project.imgUrl} alt="img of project" />
                             </section>
                             <section className="description-container">
                                 <h1 className="description-title hero-headline">
@@ -41,12 +59,12 @@ export class ProjectDex extends Component {
                                     <p>
                                         {project.description}
                                     </p>
-                                    <span>
-                                    {project.tags.map((tag, index) => { 
-                                        return <a key={tag.id}>
-                                            {tag.techTags !== 'All' && tag.techTags !== 'Front-end' && tag.techTags !== 'Full-stack' ? tag.techTags + "  " : null}  
-                                            </a> })}
-                                    </span>
+                                    <div className="tags-container">
+                                        <i className="fa fa-tag" aria-hidden="true"></i>
+                                        <span className="grey-text">
+                                            {tagsArray}
+                                        </span>
+                                    </div>
                                     <div className="project-buttons-container">
                                         <a className="project-button" href={project.gitHubUrl} target="_blank"><i className="fa fa-github fa-fw"></i>View Github</a>
                                         {project.projectUrl === null ? null : <a className="project-button" href={project.projectUrl} target="_blank"><i className="fa fa-link fa-fw"></i>View Live</a>}
@@ -56,17 +74,18 @@ export class ProjectDex extends Component {
                         </article>
                         <hr className="project-divider"/>
                     </div>
+            )
 
-                    )
-console.log("techTags", this.props.data.allProjects[0].tags[0].techTags)
+        })
+        
         return (
             <div className="projects-height">
                 <div className="projects-container">
                     {porjectItems}
                     <section className="social-icons-row-projects">
-                        <a href="https://github.com/jeffdiers" target="_blank"><img className="social-icon float" src="img/git.svg" /></a>
-                        <a href="https://www.instagram.com/jeffdiers/" target="_blank"><img className="social-icon float" src="img/ig.svg" /></a>
-                        <a href="https://www.linkedin.com/in/jeff-diers/" target="_blank"><img className="social-icon float" src="img/in.svg" /></a>
+                        <a href="https://github.com/jeffdiers" target="_blank"><img className="social-icon float" src="img/git.svg" alt="github logo img" /></a>
+                        <a href="https://www.instagram.com/jeffdiers/" target="_blank"><img className="social-icon float" src="img/ig.svg" alt="instagram logo img" /></a>
+                        <a href="https://www.linkedin.com/in/jeff-diers/" target="_blank"><img className="social-icon float" src="img/in.svg" alt="linkedin logo img" /></a>
                     </section>
                 </div>
             </div>
@@ -76,12 +95,15 @@ console.log("techTags", this.props.data.allProjects[0].tags[0].techTags)
 }
 
 const ProjectQuery = gql`
-    query ProjectQuery($hashtag: String!) {
+    query ProjectQuery($hashtag: String!, $type: String!) {
         allProjects(filter: {
             tags_some: {
                 techTags: $hashtag
             }
-        }, orderBy: createdAt_DESC) {
+            types_some: {
+                name: $type
+            }
+        }, orderBy: orderBy_ASC) {
             title
             id
             imgUrl
@@ -98,7 +120,8 @@ const ProjectQuery = gql`
  const ProjectDexWithData = graphql(ProjectQuery, {
         options: (ownProps) => ({
             variables: {
-                hashtag: ownProps.hashtag
+                hashtag: ownProps.hashtag,
+                type: ownProps.type
             }
         })
     })(ProjectDex)

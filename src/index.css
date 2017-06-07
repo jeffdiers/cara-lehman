@@ -20,6 +20,10 @@ img.my-logo {
   background-color: white;
 }
 
+.grey-text {
+  color: #9FA2B2
+}
+
 
 
 /********************************************************/
@@ -413,6 +417,35 @@ hr.project-divider {
 .description-container {
   float: left;
   width: 40%;
+}
+
+.description-copy {
+  font-size: 11pt;
+}
+
+.tags-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.fa-tag {
+  margin-right: 5px;
+}
+
+.tags {
+  color: #9FA2B2;
+  font-weight: 200;
+}
+
+.tags:hover {
+  cursor: pointer;
+  color: #DB504A
+}
+
+.filter-tag {
+  margin-right: 5vw;
+  padding-top: 24px;
+  cursor: pointer;
 }
 
 .project-img {
