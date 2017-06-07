@@ -44,17 +44,10 @@ export default class Home extends Component {
     }
 
     _filterProjectsType(event) {
-        if(event.target.innerHTML === 'All')
-            this.setState({
-                projectFilterType: event.target.innerHTML,
-                projectFilterTag: 'All',
-                showDropdown: false
-            })
-        else
-            this.setState({
-                projectFilterType: event.target.innerHTML,
-                showDropdown: false
-            })
+        this.setState({
+            projectFilterType: event.target.innerHTML,
+            showDropdown: false
+        })
     }
 
     _removeTag(event) {
