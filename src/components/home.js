@@ -65,10 +65,13 @@ export default class Home extends Component {
         if(this.state.view === "Projects") 
             return (
                 <div>
-                    <span className="projects-filter-nav">
-                        <a onClick={this._removeTag}>{this.state.projectFilterTag !== "All" ? <span className="filter-tag"><i className="fa fa-times" aria-hidden="true"></i> {this.state.projectFilterTag} </span>: null}</a>
+                    <div className="test">
+                    </div>
+                    <span className="nav-extra-text">
+                            <a onClick={this._removeTag}>{this.state.projectFilterTag !== "All" ? <span className="filter-tag"><i className="fa fa-times" aria-hidden="true"></i> {this.state.projectFilterTag} </span>: null}</a>
                             <div className="dropdown">
-                            <a onClick={this._dropdown} className="dropbtn"> {this.state.projectFilterType} <i className="fa fa-caret-down" aria-hidden="true"></i></a>
+                                <a onClick={this._dropdown} className="dropbtn"> {this.state.projectFilterType} <i className="fa fa-caret-down" aria-hidden="true"></i></a>
+                            </div>
                             <div id="myDropdown" className={toggleDropdown}>
                                 <a onClick={this._filterProjectsType}>All</a>
                                 <a onClick={this._filterProjectsType}>Full-stack</a>
@@ -76,11 +79,13 @@ export default class Home extends Component {
                                 <a onClick={this._filterProjectsType}>Web app</a>
                                 <a onClick={this._filterProjectsType}>Mobile app</a>
                             </div>
-                        </div>
                     </span>
-
                 </div>
             )
+        else if(this.state.view === "Resume")
+        return (
+                <a className="nav-extra-text active" href="img/Jeff-Diers-Resume.pdf" download>Download</a>
+        )
         else 
             return (
                 <div></div>
@@ -136,7 +141,10 @@ export default class Home extends Component {
                 return (
                    <div className="splash-height">
                         <div className="resume-container">
-                            <iframe src="https://indd.adobe.com/view/f0a5f958-58b7-4320-825c-ae3b8b030e71" width="100%" height="90%" />
+                            <img className="resume-img" src="img/Jeff-Diers-Resume.jpg" alt="resume img"></img>
+                        </div>
+                        <div className="download-container">
+                            <a className="download-button" href="img/Jeff-Diers-Resume.pdf" download>Download</a>
                         </div>
                     </div>  
                 )
@@ -186,3 +194,6 @@ export default class Home extends Component {
 
     }
 }
+
+
+                            // <iframe src="https://indd.adobe.com/view/f0a5f958-58b7-4320-825c-ae3b8b030e71" width="100%" height="90%" />

@@ -25,6 +25,7 @@ export class ProjectDex extends Component {
     }
 
     render() {
+        console.log(this.props.data.allProjects)
         if (this.props.data.loading) {
             return (
                 <div>
@@ -49,7 +50,7 @@ export class ProjectDex extends Component {
                     <div key={project.id}>
                         <article className="project-list">
                             <section className="project-image-container">
-                                <img className="project-img" src={project.imgUrl} alt="img of project" />
+                                <img className="project-img" src={project.file.url} alt="img of project" />
                             </section>
                             <section className="description-container">
                                 <h1 className="description-title hero-headline">
@@ -113,7 +114,11 @@ const ProjectQuery = gql`
             tags {
                 id
                 techTags
-          }
+            }
+            file {
+                id
+                url
+            }    
         }
     }`
 
