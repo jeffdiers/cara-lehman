@@ -65,8 +65,6 @@ export default class Home extends Component {
         if(this.state.view === "Projects") 
             return (
                 <div>
-                    <div className="test">
-                    </div>
                     <span className="nav-extra-text">
                             <a onClick={this._removeTag}>{this.state.projectFilterTag !== "All" ? <span className="filter-tag"><i className="fa fa-times" aria-hidden="true"></i> {this.state.projectFilterTag} </span>: null}</a>
                             <div className="dropdown">
@@ -84,7 +82,9 @@ export default class Home extends Component {
             )
         else if(this.state.view === "Resume")
         return (
-                <a className="nav-extra-text active" href="img/Jeff-Diers-Resume.pdf" download>Download</a>
+            <div className="nav-extra-text">
+                <a className="download-button active" href="img/Jeff-Diers-Resume.pdf" download>Download</a>
+            </div>
         )
         else 
             return (
@@ -142,9 +142,6 @@ export default class Home extends Component {
                    <div className="splash-height">
                         <div className="resume-container">
                             <img className="resume-img" src="img/Jeff-Diers-Resume.jpg" alt="resume img"></img>
-                        </div>
-                        <div className="download-container">
-                            <a className="download-button" href="img/Jeff-Diers-Resume.pdf" download>Download</a>
                         </div>
                     </div>  
                 )
