@@ -1,23 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Home from './components/home.js'
-import ApolloClient, { createNetworkInterface } from 'apollo-client'
-import { ApolloProvider } from 'react-apollo'
-import { Router, Route, browserHistory } from 'react-router'
-import './index.css'
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-
-const client = new ApolloClient({
-  networkInterface: createNetworkInterface({ uri: 'https://api.graph.cool/simple/v1/cj0mobpesyaic01029ibai5u4' })
-})
-
-ReactDOM.render((
-  <ApolloProvider client={client}>
-    <Router history={browserHistory}>
-      <Route path='/' component={Home} />
-    </Router>
-  </ApolloProvider>
-),
-  document.getElementById('root')
-)
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
