@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const caprasimo = Caprasimo({
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-cap",
+  variable: "--font-caprasimo",
 });
 
 export const metadata: Metadata = {
