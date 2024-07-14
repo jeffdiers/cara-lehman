@@ -4,58 +4,85 @@
 
 @layer base {
   :root {
-    --background: 258 99% 50%; /* Main background color */
-    --foreground: 258 10% 90%; /* Light version of the primary for text on dark backgrounds */
-    --card: 258 50% 95%; /* Light background for cards */
-    --card-foreground: 258 10% 30%; /* Darker text color for cards */
-    --popover: 258 50% 95%; /* Light background for popovers */
-    --popover-foreground: 258 10% 30%; /* Darker text color for popovers */
-    --primary: 258 99% 50%; /* Primary brand color */
-    --primary-foreground: 258 10% 90%; /* Light text color for primary buttons */
-    --secondary: 258 20% 80%; /* Secondary color for contrast */
-    --secondary-foreground: 258 10% 30%; /* Dark text color for secondary elements */
-    --muted: 258 20% 90%; /* Muted background for less important elements */
-    --muted-foreground: 258 10% 40%; /* Text on muted backgrounds */
-    --accent: 258 80% 60%; /* Accent color for highlights */
-    --accent-foreground: 258 10% 90%; /* Text on accent backgrounds */
-    --destructive: 0 84.2% 60.2%; /* Red for destructive actions */
-    --destructive-foreground: 0 0% 98%; /* Light text on destructive backgrounds */
-    --border: 258 20% 80%; /* Borders with a subtle hint of the primary color */
-    --input: 258 20% 80%; /* Inputs with a subtle hint of the primary color */
-    --ring: 258 99% 50%; /* Ring color for focus states */
-    --radius: 0.5rem;
-    --chart-1: 258 99% 50%; /* Chart color 1 */
-    --chart-2: 240 58% 39%; /* Complementary color 1 */
-    --chart-3: 197 37% 24%; /* Complementary color 2 */
-    --chart-4: 43 74% 66%; /* Complementary color 3 */
-    --chart-5: 27 87% 67%; /* Complementary color 4 */
+    --background: 45 23% 95%; /* Primary background color */
+    --foreground: 174 59% 15%; /* Primary text color */
+
+    --card: 45 23% 90%; /* Blended background for cards */
+    --card-foreground: 174 59% 15%; /* Dark text color for cards */
+
+    --popover: 45 23% 85%; /* Slightly darker background for popovers */
+    --popover-foreground: 174 59% 15%; /* Dark text color for popovers */
+
+    --primary: 204 68% 50%; /* Primary accent color */
+    --primary-foreground: 0 0% 100%; /* Light text color for primary buttons */
+
+    --secondary: 174 30% 60%; /* Secondary accent color for contrast */
+    --secondary-foreground: 174 59% 15%; /* Dark text color for secondary elements */
+
+    --muted: 45 23% 85%; /* Muted background for less important elements */
+    --muted-foreground: 174 59% 15%; /* Text on muted backgrounds */
+
+    --accent: 191 71% 71%; /* Accent color for highlights */
+    --accent-foreground: 174 59% 15%; /* Text on accent backgrounds */
+
+    --destructive: 0 79% 54%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* Light text on destructive backgrounds */
+
+    --border: 174 20% 50%; /* Borders with a subtle hint of the primary color */
+
+    --input: 174 59% 15%; /* Light background for inputs */
+    --input-foreground: 45 23% 90%; /* Dark text color for inputs */
+
+    --ring: 204 68% 50%; /* Ring color for focus states */
+
+    --radius: 0.5rem; /* Border radius for elements */
+
+    --chart-1: 204 68% 40%; /* Chart color 1 */
+    --chart-2: 40 100% 61%; /* Chart color 2 */
+    --chart-3: 191 71% 71%; /* Chart color 3 */
+    --chart-4: 0 79% 54%; /* Chart color 4 */
+    --chart-5: 270 14% 41%; /* Chart color 5 */
   }
 
   .dark {
-    --background: 258 10% 15%; /* Dark version of primary for background */
-    --foreground: 258 99% 90%; /* Light text for dark backgrounds */
-    --card: 258 10% 20%; /* Slightly lighter background for cards */
-    --card-foreground: 258 99% 90%; /* Light text for card backgrounds */
-    --popover: 258 10% 20%; /* Slightly lighter background for popovers */
-    --popover-foreground: 258 99% 90%; /* Light text for popover backgrounds */
-    --primary: 258 99% 50%; /* Primary brand color */
-    --primary-foreground: 258 10% 90%; /* Light text on primary backgrounds */
-    --secondary: 258 20% 40%; /* Secondary color with good contrast */
-    --secondary-foreground: 258 99% 90%; /* Light text on secondary backgrounds */
-    --muted: 258 10% 25%; /* Muted background for less important elements */
-    --muted-foreground: 258 10% 50%; /* Text on muted backgrounds */
-    --accent: 258 99% 60%; /* Bright accent color */
-    --accent-foreground: 258 10% 90%; /* Light text on accent backgrounds */
-    --destructive: 0 62.8% 30.6%; /* Red for destructive actions */
-    --destructive-foreground: 0 0% 98%; /* Light text on destructive backgrounds */
-    --border: 258 10% 25%; /* Dark border with a subtle hint of the primary color */
-    --input: 258 10% 25%; /* Dark input background */
-    --ring: 258 99% 50%; /* Ring color for focus states */
-    --chart-1: 258 99% 50%; /* Chart color 1 */
-    --chart-2: 240 58% 39%; /* Complementary color 1 */
-    --chart-3: 197 37% 24%; /* Complementary color 2 */
-    --chart-4: 43 74% 66%; /* Complementary color 3 */
-    --chart-5: 27 87% 67%; /* Complementary color 4 */
+    --background: 174 59% 10%; /* Dark background color */
+    --foreground: 45 23% 90%; /* Light text color for dark background */
+
+    --card: 174 59% 15%; /* Dark card background to blend with the main background */
+    --card-foreground: 45 23% 90%; /* Light text color for cards */
+
+    --popover: 174 59% 20%; /* Slightly lighter background for popovers */
+    --popover-foreground: 45 23% 90%; /* Light text color for popovers */
+
+    --primary: 204 68% 40%; /* Primary accent color */
+    --primary-foreground: 45 23% 90%; /* Light text color for primary buttons */
+
+    --secondary: 174 59% 30%; /* Lighter secondary accent color */
+    --secondary-foreground: 45 23% 90%; /* Light text color for secondary elements */
+
+    --muted: 174 59% 20%; /* Muted background for less important elements */
+    --muted-foreground: 45 23% 90%; /* Light text on muted backgrounds */
+
+    --accent: 191 71% 71%; /* Accent color for highlights */
+    --accent-foreground: 45 23% 90%; /* Text on accent backgrounds */
+
+    --destructive: 0 79% 54%; /* Red for destructive actions */
+    --destructive-foreground: 45 23% 90%; /* Light text on destructive backgrounds */
+
+    --border: 174 59% 20%; /* Borders with a subtle hint of the background color */
+
+    --input: 45 23% 90%; /* Inputs with a subtle hint of the background color */
+    --input-foreground: 174 59% 10%; /* Light text color for inputs */
+
+    --ring: 204 68% 40%; /* Ring color for focus states */
+
+    --radius: 0.5rem; /* Border radius for elements */
+
+    --chart-1: 204 68% 40%; /* Chart color 1 */
+    --chart-2: 204 34% 60%; /* Chart color 2 */
+    --chart-3: 191 71% 71%; /* Chart color 3 */
+    --chart-4: 0 79% 54%; /* Chart color 4 */
+    --chart-5: 270 14% 41%; /* Chart color 5 */
   }
 }
 
