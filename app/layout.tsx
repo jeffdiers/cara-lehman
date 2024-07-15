@@ -3,6 +3,7 @@ import { Inter, Caprasimo } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
+import HistoryProvider from "@/lib/history-context";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const caprasimo = Caprasimo({
@@ -18,8 +19,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modals,
 }: Readonly<{
   children: React.ReactNode;
+  modals: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -30,14 +33,17 @@ export default function RootLayout({
           inter.variable
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <HistoryProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            {modals}
+          </ThemeProvider>
+        </HistoryProvider>
       </body>
     </html>
   );

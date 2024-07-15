@@ -38,7 +38,7 @@ export default function Home() {
             </P>
           </div>
           <div className="mt-4 flex flex-row space-x-4 pt-4">
-            <CardLink href="#">
+            <CardLink href="/about">
               <CardHeader className="flex-grow">
                 <div className="flex justify-between items-start">
                   <Badge className="p-2">
