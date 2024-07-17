@@ -15,7 +15,7 @@ const CardLink = React.forwardRef<
     ref={ref}
     href={href}
     className={cn(
-      "border rounded-sm sm:rounded-lg bg-card text-card-foreground shadow group max-w-full flex flex-col w-64 h-64", // default card styles
+      "rounded-xl sm:rounded-2xl bg-card text-card-foreground shadow-lg group max-w-full flex flex-col w-64 h-64", // default card styles
       "text-left cursor-pointer hover:ring-2 hover:ring-ring hover:ring-offset-2 hover:ring-offset-background hover:border-border-hover transition-all duration-300",
       className
     )}
@@ -33,7 +33,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "border sm:rounded-lg bg-card text-card-foreground shadow",
+      "border sm:rounded-lg bg-card text-card-foreground shadow-2xl",
       className
     )}
     {...props}
