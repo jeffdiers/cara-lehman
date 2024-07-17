@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 23% 95%; /* Primary background color */
+    --foreground: 174 59% 15%; /* Primary text color */
+
+    --card: 45 23% 88%; /* Blended background for cards */
+    --card-foreground: 174 59% 15%; /* Dark text color for cards */
+
+    --popover: 45 23% 85%; /* Slightly darker background for popovers */
+    --popover-foreground: 174 59% 15%; /* Dark text color for popovers */
+
+    --primary: 204 68% 50%; /* Primary accent color */
+    --primary-foreground: 0 0% 100%; /* Light text color for primary buttons */
+
+    --secondary: 174 30% 60%; /* Secondary accent color for contrast */
+    --secondary-foreground: 174 59% 15%; /* Dark text color for secondary elements */
+
+    --muted: 45 23% 85%; /* Muted background for less important elements */
+    --muted-foreground: 174 59% 15%; /* Text on muted backgrounds */
+
+    --accent: 191 71% 71%; /* Accent color for highlights */
+    --accent-foreground: 174 59% 15%; /* Text on accent backgrounds */
+
+    --destructive: 0 79% 54%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* Light text on destructive backgrounds */
+
+    --border: 174 20% 50%; /* Borders with a subtle hint of the primary color */
+
+    --input: 174 59% 15%; /* Light background for inputs */
+    --input-foreground: 45 23% 90%; /* Dark text color for inputs */
+
+    --ring: 191 71% 71%; /* Ring color for focus states */
+
+    --radius: 0.5rem; /* Border radius for elements */
+
+    --chart-1: 204 68% 40%; /* Chart color 1 */
+    --chart-2: 40 100% 61%; /* Chart color 2 */
+    --chart-3: 191 71% 71%; /* Chart color 3 */
+    --chart-4: 0 79% 54%; /* Chart color 4 */
+    --chart-5: 270 14% 41%; /* Chart color 5 */
+  }
+
+  .dark {
+    --background: 174 59% 10%; /* Dark background color */
+    --foreground: 45 23% 90%; /* Light text color for dark background */
+
+    --card: 174 59% 15%; /* Dark card background to blend with the main background */
+    --card-foreground: 45 23% 90%; /* Light text color for cards */
+
+    --popover: 174 59% 20%; /* Slightly lighter background for popovers */
+    --popover-foreground: 45 23% 90%; /* Light text color for popovers */
+
+    --primary: 204 68% 40%; /* Primary accent color */
+    --primary-foreground: 45 23% 90%; /* Light text color for primary buttons */
+
+    --secondary: 174 59% 30%; /* Lighter secondary accent color */
+    --secondary-foreground: 45 23% 90%; /* Light text color for secondary elements */
+
+    --muted: 174 59% 20%; /* Muted background for less important elements */
+    --muted-foreground: 45 23% 90%; /* Light text on muted backgrounds */
+
+    --accent: 204 68% 40%; /* Accent color for highlights */
+    --accent-foreground: 45 23% 90%; /* Text on accent backgrounds */
+
+    --destructive: 0 79% 54%; /* Red for destructive actions */
+    --destructive-foreground: 45 23% 90%; /* Light text on destructive backgrounds */
+
+    --border: 174 59% 20%; /* Borders with a subtle hint of the background color */
+
+    --input: 45 23% 90%; /* Inputs with a subtle hint of the background color */
+    --input-foreground: 174 59% 10%; /* Light text color for inputs */
+
+    --ring: 204 68% 40%; /* Ring color for focus states */
+
+    --radius: 0.5rem; /* Border radius for elements */
+
+    --chart-1: 204 68% 40%; /* Chart color 1 */
+    --chart-2: 204 34% 60%; /* Chart color 2 */
+    --chart-3: 191 71% 71%; /* Chart color 3 */
+    --chart-4: 0 79% 54%; /* Chart color 4 */
+    --chart-5: 270 14% 41%; /* Chart color 5 */
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
