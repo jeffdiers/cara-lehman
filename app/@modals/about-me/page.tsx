@@ -46,8 +46,8 @@ export default function AboutMePage() {
             <p className="mb-4 text-center">
               Beyond my professional work, I enjoy exploring the complexities of
               software engineering and staying updated with the latest industry
-              trends. When I'm not coding, you can find me spending quality time
-              with my dog, Bernie 🐶.
+              trends. When I&apos;m not coding, you can find me spending quality
+              time with my dog, Bernie 🐶.
             </p>
             <h3 className="text-xl font-semibold mb-2">
               Technologies I Work With
