@@ -7,7 +7,7 @@ export const H1 = React.forwardRef<
   return (
     <h1
       ref={ref}
-      className={`scroll-m-20 text-3xl md:text-4xl lg:text-5xl ${className}`}
+      className={`font-caprasimo scroll-m-20 text-3xl md:text-4xl lg:text-5xl ${className}`}
       {...props}
     >
       {children}

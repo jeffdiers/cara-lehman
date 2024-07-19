@@ -37,15 +37,15 @@ const cardLinksData: Omit<HomeCardProps, "number">[] = [
 export default function HomeScreen() {
   return (
     <main className="flex flex-col justify-center">
-      <div className="font-caprasimo space-y-0 p-4 md:p-12">
+      <div className="space-y-0 px-4 md:px-12">
         <H1>Hello, my name is Jeff.</H1>
-        <P className="text-md lg:text-xl text-destructive">
+        <P className="font-caprasimo text-md lg:text-xl text-destructive">
           I am a Software Engineer based in NYC.
         </P>
       </div>
 
       {/* Card Links */}
-      <div className="flex overflow-x-auto flex-row space-x-4 pt-1 md:pt-4 h-64 hide-scrollbar">
+      <div className="flex overflow-x-auto flex-row space-x-4 pt-1 md:pt-4 h-64 hide-scrollbar pr-4 md:pr-12">
         {cardLinksData.map((card, index) => (
           <HomeCard
             key={index}
@@ -55,7 +55,13 @@ export default function HomeScreen() {
             title={card.title}
             badges={card.badges}
             secondaryIcons={card.secondaryIcons}
-            className={index === 0 ? "ml-4" : ""}
+            className={
+              index === 0
+                ? "ml-4 md:ml-12"
+                : index === cardLinksData.length - 1
+                  ? "mr-4 md:mr-12"
+                  : ""
+            }
           />
         ))}
       </div>

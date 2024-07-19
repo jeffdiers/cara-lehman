@@ -3,7 +3,7 @@ import HomeScreen from "@/components/home-screen";
 
 export default function Home() {
   return (
-    <div className="relative flex flex-col bg-background text-foreground min-h-screen justify-between">
+    <div className="relative flex flex-col justify-between bg-background text-foreground min-h-screen">
       <Header />
       <HomeScreen />
       <Footer />
