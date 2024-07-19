@@ -8,6 +8,7 @@ import {
   HeartFilledIcon,
   SunIcon,
   MoonIcon,
+  LaptopIcon,
 } from "@radix-ui/react-icons";
 import {
   NavigationMenu,
@@ -39,12 +40,15 @@ export function ModeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
+          <SunIcon className="h-5 w-5 mr-2" />
           Light
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
+          <MoonIcon className="h-5 w-5 mr-2" />
           Dark
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
+          <LaptopIcon className="h-5 w-5 mr-2" />
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
@@ -74,7 +78,7 @@ export function Header() {
   }, []);
   return (
     <header className="sticky items-center top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container p-4 md:p-12 flex justify-end items-center w-full">
+      <div className="container p-4 px-4 md:px-12 flex justify-end items-center w-full">
         <div className="flex items-center justify-center space-x-3 font-caprasimo italic mr-2">
           <span>Brooklyn, NY</span>
           <GlobeIcon className="h-5 w-5 text-secondary" />
@@ -90,8 +94,8 @@ export function Header() {
 
 export function Footer() {
   return (
-    <div className="sticky bottom-0 left-0 right-0 p-4 h-auto">
-      <div className="container flex flex-col md:flex-row items-center justify-between h-12 gap-x-4 font-caprasimo italic text-lg">
+    <div className="sticky bottom-0 left-0 right-0">
+      <div className="container p-4 px-4 md:px-12 flex flex-col md:flex-row items-center justify-between gap-x-4 font-caprasimo italic text-lg">
         <div className="flex items-center gap-x-4">
           <span>Thank you for visiting</span>
           <HeartFilledIcon />
