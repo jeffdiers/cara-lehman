@@ -15,7 +15,7 @@ export function ModalPageTitle({ children }: PropsWithChildren) {
 }
 
 export function ModalScrollBody({ children }: PropsWithChildren) {
-  return <div className="h-full overflow-y-auto p-0 sm:p-6">{children}</div>;
+  return <div className="h-full overflow-y-auto p-1 sm:px-6">{children}</div>;
 }
 
 export function ModalPage({ children }: PropsWithChildren) {

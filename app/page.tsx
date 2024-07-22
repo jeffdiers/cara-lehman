@@ -17,7 +17,7 @@ const cardLinksData: Omit<HomeCardProps, "number">[] = [
     secondaryIcons: ["EyeOpenIcon"],
   },
   {
-    href: "#",
+    href: "/resume",
     icon: "FileTextIcon",
     title: "Resume",
     badges: ["PDF", "Download"],
