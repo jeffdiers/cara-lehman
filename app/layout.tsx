@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Caprasimo } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/components/theme-provider";
-import HistoryProvider from "@/lib/history-context";
+import { Providers } from "@/components/providers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const caprasimo = Caprasimo({
@@ -33,17 +32,10 @@ export default function RootLayout({
           inter.variable
         )}
       >
-        <HistoryProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-            {modals}
-          </ThemeProvider>
-        </HistoryProvider>
+        <Providers>
+          {children}
+          {modals}
+        </Providers>
       </body>
     </html>
   );
