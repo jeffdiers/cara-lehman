@@ -1,5 +1,10 @@
-import ModalPage from "../_components/modal-page";
-import { DialogTitle } from "@/components/ui/dialog";
+"use client";
+
+import {
+  ModalPage,
+  ModalPageTitle,
+  ModalScrollBody,
+} from "@/components/modal-page";
 import Image from "next/image";
 import { MY_STACK, TechBadge } from "@/components/tech-badge";
 import { H3, P } from "@/components/ui/typography";
@@ -7,8 +12,8 @@ import { H3, P } from "@/components/ui/typography";
 export default function AboutMePage() {
   return (
     <ModalPage>
-      <DialogTitle>About Me</DialogTitle>
-      <div className="h-full p-4 overflow-y-auto">
+      <ModalPageTitle>About Me</ModalPageTitle>
+      <ModalScrollBody>
         <div className="flex flex-col items-center text-center">
           <Image
             src="/me_and_bernie.jpeg"
@@ -63,7 +68,7 @@ export default function AboutMePage() {
             time with my family and my dog, Bernie 🐶.
           </P>
         </div>
-      </div>
+      </ModalScrollBody>
     </ModalPage>
   );
 }

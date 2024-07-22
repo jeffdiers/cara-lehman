@@ -1,6 +1,6 @@
 "use client";
 
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 import { useHistory } from "@/lib/history-context";
 import {
@@ -8,13 +8,17 @@ import {
   useRouter,
   useSelectedLayoutSegments,
 } from "next/navigation";
-import { useEffect, useState } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 
-type ModalPageProps = {
-  children: React.ReactNode;
-};
+export function ModalPageTitle({ children }: PropsWithChildren) {
+  return <DialogTitle className="p-6">{children}</DialogTitle>;
+}
 
-const ModalPage: React.FC<ModalPageProps> = ({ children }) => {
+export function ModalScrollBody({ children }: PropsWithChildren) {
+  return <div className="h-full overflow-y-auto p-0 sm:p-6">{children}</div>;
+}
+
+export function ModalPage({ children }: PropsWithChildren) {
   const router = useRouter();
   const history = useHistory();
   const segments = useSelectedLayoutSegments("children");
@@ -64,13 +68,11 @@ const ModalPage: React.FC<ModalPageProps> = ({ children }) => {
 
   return (
     <Dialog open={isDialogOpen} onOpenChange={handleClose} modal>
-      <DialogContent className="flex flex-col sm:w-[90vw] sm:h-[90vh] h-full w-screen max-w-3xl border-0 sm:border">
+      <DialogContent className="flex flex-col p-0 pb-6 sm:w-[90vw] sm:h-[90vh] h-full w-screen max-w-3xl border-0 sm:border gap-0">
         {children}
         {/* <NextPageButton />
         <PreviousPageButton /> */}
       </DialogContent>
     </Dialog>
   );
-};
-
-export default ModalPage;
+}
