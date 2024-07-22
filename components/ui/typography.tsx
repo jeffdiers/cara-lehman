@@ -39,7 +39,7 @@ export const H3 = React.forwardRef<
   return (
     <h3
       ref={ref}
-      className={`scroll-m-20 text-xl md:text-2xl ${className}`}
+      className={`scroll-m-20 text-xl md:text-2xl font-caprasimo ${className}`}
       {...props}
     >
       {children}
@@ -48,6 +48,22 @@ export const H3 = React.forwardRef<
 });
 H3.displayName = "H3";
 
+export const H4 = React.forwardRef<
+  HTMLHeadingElement,
+  React.ComponentProps<"h4">
+>(({ children, className, ...props }, ref) => {
+  return (
+    <h4
+      ref={ref}
+      className={`scroll-m-20 text-lg md:text-xl font-caprasimo ${className}`}
+      {...props}
+    >
+      {children}
+    </h4>
+  );
+});
+H4.displayName = "H4";
+
 export const P = React.forwardRef<
   HTMLParagraphElement,
   React.ComponentProps<"p">
@@ -55,7 +71,7 @@ export const P = React.forwardRef<
   return (
     <p
       ref={ref}
-      className={`leading-7 [&:not(:first-child)]:mt-6 ${className}`}
+      className={`text-foreground text-lg leading-relaxed [&:not(:first-child)]:mt-4 ${className}`}
       {...props}
     >
       {children}

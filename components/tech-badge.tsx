@@ -5,13 +5,16 @@ import {
   SiGithub,
   SiGo,
   SiJavascript,
+  SiJest,
   SiJquery,
   SiLinux,
   SiMongodb,
+  SiNetlify,
   SiNextdotjs,
   SiNodedotjs,
   SiPostgresql,
   SiReact,
+  SiRedux,
   SiTailwindcss,
   SiTypescript,
 } from "@icons-pack/react-simple-icons";
@@ -22,6 +25,10 @@ export const MY_STACK = {
     icon: SiReact,
     text: "React.js",
   },
+  redux: {
+    icon: SiRedux,
+    text: "Redux",
+  },
   javascript: {
     icon: SiJavascript,
     text: "JavaScript",
@@ -29,6 +36,10 @@ export const MY_STACK = {
   typescript: {
     icon: SiTypescript,
     text: "TypeScript",
+  },
+  jest: {
+    icon: SiJest,
+    text: "Jest",
   },
   go: {
     icon: SiGo,
@@ -78,9 +89,13 @@ export const MY_STACK = {
     icon: SiDocker,
     text: "Docker",
   },
+  netlify: {
+    icon: SiNetlify,
+    text: "Netlify",
+  },
 };
 
-type TECH_STACK_NAME = keyof typeof MY_STACK;
+export type TECH_STACK_NAME = keyof typeof MY_STACK;
 
 interface TechBadgeProps extends BadgeProps {
   type: TECH_STACK_NAME;
@@ -89,9 +104,9 @@ interface TechBadgeProps extends BadgeProps {
 export function TechBadge({ type, ...props }: TechBadgeProps) {
   const Icon = MY_STACK[type].icon;
   return (
-    <Badge {...props}>
+    <Badge className="text-sm" {...props}>
       <Icon className="h-4 w-4" />
-      <span className="ml-1">{MY_STACK[type].text}</span>
+      <span className="ml-2">{MY_STACK[type].text}</span>
     </Badge>
   );
 }

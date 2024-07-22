@@ -64,11 +64,11 @@ const ModalPage: React.FC<ModalPageProps> = ({ children }) => {
 
   return (
     <Dialog open={isDialogOpen} onOpenChange={handleClose} modal>
-      {/* <DialogContent className="flex flex-col sm:w-[90vw] sm:h-[90vh] h-full w-screen max-w-7xl border-0 sm:border"> */}
-      {children}
-      {/* <NextPageButton />
+      <DialogContent className="flex flex-col sm:w-[90vw] sm:h-[90vh] h-full w-screen max-w-3xl border-0 sm:border">
+        {children}
+        {/* <NextPageButton />
         <PreviousPageButton /> */}
-      {/* </DialogContent> */}
+      </DialogContent>
     </Dialog>
   );
 };
