@@ -1,5 +1,10 @@
-import { DialogTitle } from "@/components/ui/dialog";
-import ModalPage from "../_components/modal-page";
+"use client";
+
+import {
+  ModalPage,
+  ModalPageTitle,
+  ModalScrollBody,
+} from "@/components/modal-page";
 import { H3, P } from "@/components/ui/typography";
 import { Badge } from "@/components/ui/badge";
 import { TECH_STACK_NAME, TechBadge } from "@/components/tech-badge";
@@ -35,8 +40,8 @@ const TECH_STACK: TECH_STACK_NAME[] = [
 export default function DrugWarsPage() {
   return (
     <ModalPage>
-      <DialogTitle>Drug Wars</DialogTitle>
-      <div className="h-full p-4 overflow-y-auto pb-8">
+      <ModalPageTitle>Drug Wars</ModalPageTitle>
+      <ModalScrollBody>
         <div className="flex flex-col items-center text-center">
           <Image
             src="/drug_wars_screenshot.jpg"
@@ -51,6 +56,8 @@ export default function DrugWarsPage() {
               🕹️ Play Now
             </a>
           </Button>
+
+          <H3 className="mt-8">About the Game</H3>
           <P>
             Drug Wars is a turn-based strategy game that puts you in the shoes
             of a drug dealer. You start with a small amount of money and a few
@@ -58,6 +65,12 @@ export default function DrugWarsPage() {
             This game has been around since the 1980s and has been played by
             millions of people around the world. This is my take on the classic.
           </P>
+
+          <div className="flex flex-wrap gap-2 justify-center mt-4">
+            {FEATURES.map((feature, index) => (
+              <Feature key={index} emoji={feature.emoji} text={feature.text} />
+            ))}
+          </div>
 
           <H3 className="mt-8">Gameplay</H3>
           <P>
@@ -68,25 +81,6 @@ export default function DrugWarsPage() {
             powerful drug lord in the city.
           </P>
 
-          <div className="flex flex-wrap gap-2 justify-center mt-4">
-            {FEATURES.map((feature, index) => (
-              <Feature key={index} emoji={feature.emoji} text={feature.text} />
-            ))}
-          </div>
-
-          <H3 className="mt-8">Strategy</H3>
-          <P>
-            Drug Wars is a game of strategy. You must make smart decisions to
-            grow your empire and defeat your rivals. Here are a few tips to help
-            you succeed:
-          </P>
-          <div className="text-center list-disc list-inside font-bold italic text-lg mt-2">
-            <div>Invest in high-profit drugs</div>
-            <div>Hire henchmen to protect your empire</div>
-            <div>Expand your territory</div>
-            <div>Eliminate rival drug dealers</div>
-          </div>
-
           <H3 className="mt-8">Technologies Used</H3>
           <div className="flex flex-wrap gap-1 justify-center mt-4">
             {TECH_STACK.map((badge) => (
@@ -94,7 +88,7 @@ export default function DrugWarsPage() {
             ))}
           </div>
         </div>
-      </div>
+      </ModalScrollBody>
     </ModalPage>
   );
 }
