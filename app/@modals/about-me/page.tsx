@@ -1,57 +1,33 @@
-import { Badge } from "@/components/ui/badge";
 import ModalPage from "../_components/modal-page";
-import { DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { DialogTitle } from "@/components/ui/dialog";
 import Image from "next/image";
 import { MY_STACK, TechBadge } from "@/components/tech-badge";
+import { H3, P } from "@/components/ui/typography";
 
 export default function AboutMePage() {
   return (
     <ModalPage>
-      <DialogContent className="flex flex-col sm:w-[90vw] sm:h-[90vh] h-full w-screen max-w-3xl border-0 sm:border">
-        <DialogTitle>About Me</DialogTitle>
-        <main className="h-full p-4 overflow-y-auto">
-          <div className="flex flex-col items-center">
-            <Image
-              src="/me_and_bernie.jpeg"
-              alt="Picture of Jeff Diers and his dog Bernie"
-              width={150}
-              height={150}
-              className="rounded-full mb-4"
-            />
-            <h2 className="text-2xl font-semibold mb-2">Jeff Diers</h2>
-            <p className="mb-4 text-center">
-              I am an experienced software engineer and application developer
-              passionate about driving digital transformation and creating
-              innovative solutions. With expertise in full-stack development, I
-              leverage a diverse skill set in popular languages, frameworks, and
-              libraries including TypeScript, MongoDB, SQL, GO, React.js,
-              Next.js, jQuery, and Node.js.
-            </p>
-            <p className="mb-4 text-center">
-              Currently, I am a Senior Software Engineer at Jona, where I
-              contribute to a high-paced startup environment, developing and
-              maintaining a customer-facing web application powered by AI. My
-              work focuses on enhancing user experience and system performance
-              through the development of both frontend UI components and backend
-              APIs.
-            </p>
-            <p className="mb-4 text-center">
-              My career spans across several companies where I have consistently
-              delivered high-quality code and collaborated with cross-functional
-              teams to create scalable, sustainable, and accessible solutions. I
-              have a strong background in developing AI-powered tools,
-              optimizing web performance, and building comprehensive UI
-              component libraries.
-            </p>
-            <p className="mb-4 text-center">
-              Beyond my professional work, I enjoy exploring the complexities of
-              software engineering and staying updated with the latest industry
-              trends. When I&apos;m not coding, you can find me spending quality
-              time with my dog, Bernie 🐶.
-            </p>
-            <h3 className="text-xl font-semibold mb-2">
-              Technologies I Work With
-            </h3>
+      <DialogTitle>About Me</DialogTitle>
+      <div className="h-full p-4 overflow-y-auto">
+        <div className="flex flex-col items-center text-center">
+          <Image
+            src="/me_and_bernie.jpeg"
+            alt="Picture of Jeff Diers and his dog Bernie"
+            width={150}
+            height={150}
+            className="rounded-full"
+          />
+
+          <H3 className="mt-8">Jeff Diers</H3>
+          <P>
+            I am an experienced software engineer and application developer
+            passionate about driving digital transformation and creating
+            innovative solutions. With expertise in full-stack development, I
+            leverage a diverse skill set in popular languages, frameworks, and
+            libraries with a focus on expanding my knowledge and skillset.
+          </P>
+          <div className="flex flex-col items-center gap-y-3 mb-2 mt-8">
+            <H3>Technologies I Work With</H3>
             <div className="flex flex-wrap gap-1 justify-center">
               {Object.keys(MY_STACK).map(
                 (
@@ -65,13 +41,29 @@ export default function AboutMePage() {
                 )
               )}
             </div>
-            <p className="text-center mt-4">
-              I love working with these technologies to build innovative
-              solutions and tackle new challenges every day! 🚀
-            </p>
           </div>
-        </main>
-      </DialogContent>
+          <P>
+            Currently, I am a Senior Software Engineer at Jona, where I
+            contribute to a high-paced startup environment, developing and
+            maintaining a customer-facing web application powered by AI. My work
+            focuses on enhancing user experience and system performance through
+            the development of both frontend UI components and backend APIs.
+          </P>
+          <P>
+            My career spans across several companies where I have consistently
+            delivered high-quality code and collaborated with cross-functional
+            teams to create scalable, sustainable, and accessible solutions. I
+            have a strong background in developing AI-powered tools, optimizing
+            web performance, and building comprehensive UI component libraries.
+          </P>
+          <P>
+            Beyond my professional work, I enjoy exploring the complexities of
+            software engineering and staying updated with the latest industry
+            trends. When I&apos;m not coding, you can find me spending quality
+            time with my family and my dog, Bernie 🐶.
+          </P>
+        </div>
+      </div>
     </ModalPage>
   );
 }

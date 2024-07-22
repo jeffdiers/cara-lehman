@@ -3,6 +3,7 @@ import { Inter, Caprasimo } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Providers } from "@/components/providers";
+import { Footer, Header } from "@/components/nav-menus";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const caprasimo = Caprasimo({
@@ -32,10 +33,16 @@ export default function RootLayout({
           inter.variable
         )}
       >
-        <Providers>
-          {children}
-          {modals}
-        </Providers>
+        <main className="relative flex flex-col justify-between bg-background text-foreground min-h-screen">
+          <Providers>
+            <Header />
+
+            {children}
+            {modals}
+
+            <Footer />
+          </Providers>
+        </main>
       </body>
     </html>
   );
