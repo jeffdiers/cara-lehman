@@ -82,7 +82,7 @@ export default function DrugWarsPage() {
           </P>
 
           <H3 className="mt-8">Technologies Used</H3>
-          <div className="flex flex-wrap gap-1 justify-center mt-4">
+          <div className="flex flex-wrap gap-2 justify-center mt-4">
             {TECH_STACK.map((badge) => (
               <TechBadge key={badge} type={badge} variant="secondary" />
             ))}
