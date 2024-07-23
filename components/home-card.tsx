@@ -1,58 +1,35 @@
-import {
-  PersonIcon,
-  EyeOpenIcon,
-  FileTextIcon,
-  DownloadIcon,
-  DashboardIcon,
-  ExternalLinkIcon,
-} from "@radix-ui/react-icons";
-import { RiGamepadLine } from "@remixicon/react";
 import { Badge } from "./ui/badge";
 import { CardContent, CardHeader, CardLink, CardTitle } from "./ui/card";
-
-const iconComponents = {
-  PersonIcon: PersonIcon,
-  EyeOpenIcon: EyeOpenIcon,
-  RiGamepadLine: RiGamepadLine,
-  FileTextIcon: FileTextIcon,
-  DownloadIcon: DownloadIcon,
-  DashboardIcon: DashboardIcon,
-  ExternalLinkIcon: ExternalLinkIcon,
-};
+import { cn } from "@/lib/utils";
+import React from "react";
+import { IconType } from "./icons/types";
 
 export interface HomeCardProps {
   number: string | number;
   href: string;
-  icon: keyof typeof iconComponents;
+  icon: IconType | any;
   title: string;
   badges: string[];
-  secondaryIcons: (keyof typeof iconComponents)[];
+  secondaryIcon: IconType | any;
   className?: string;
 }
-
-import { cn } from "@/lib/utils";
 
 export function HomeCard({
   number,
   href,
-  icon,
+  icon: IconComponent,
   title,
   badges,
-  secondaryIcons,
+  secondaryIcon: SecondaryIconComponent,
   className,
 }: HomeCardProps) {
-  const IconComponent = iconComponents[icon];
-
   return (
     <CardLink href={href} className={cn(className, "min-w-64 h-56")}>
       <CardHeader className="flex-grow">
         <div className="flex justify-between items-start">
           <span className="font-caprasimo text-3xl">0{number}.</span>
           <div className="flex flex-col items-end text-right w-[65px] gap-y-2">
-            {secondaryIcons.map((SecondaryIcon, index) => {
-              const SecondaryIconComponent = iconComponents[SecondaryIcon];
-              return <SecondaryIconComponent key={index} className="h-5 w-5" />;
-            })}
+            <SecondaryIconComponent className="h-5 w-5" />
             <IconComponent className="h-5 w-5 " />
           </div>
         </div>
