@@ -5,15 +5,21 @@ import {
   ModalPageTitle,
   ModalScrollBody,
 } from "@/components/modal-page";
-import { CustomPDFViewer } from "@/components/pdf-viewer";
+import { Resume } from "@/components/resume";
+import { Button } from "@/components/ui/button";
 
 export default function ResumePage() {
   return (
     <ModalPage>
       <ModalPageTitle>Resume</ModalPageTitle>
       <ModalScrollBody>
-        <div className="bg-white rounded-lg shadow-lg p-4">
-          <CustomPDFViewer pdfFile="/Jeff_Diers-Resume-2024.pdf" />
+        <Button asChild variant="outline" className="text-xl">
+          <a href="/Jeff_Diers-Resume-2024.pdf" download>
+            📄 Download PDF
+          </a>
+        </Button>
+        <div className="bg-white rounded-lg p-4 mt-8">
+          <Resume />
         </div>
       </ModalScrollBody>
     </ModalPage>

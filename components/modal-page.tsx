@@ -8,15 +8,28 @@ import {
   useRouter,
   useSelectedLayoutSegments,
 } from "next/navigation";
+import React from "react";
 import { PropsWithChildren, useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 export function ModalPageTitle({ children }: PropsWithChildren) {
   return <DialogTitle className="p-6">{children}</DialogTitle>;
 }
 
-export function ModalScrollBody({ children }: PropsWithChildren) {
-  return <div className="h-full overflow-y-auto p-1 sm:px-6">{children}</div>;
-}
+export const ModalScrollBody = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "flex flex-col items-center text-center h-full overflow-y-auto p-1 sm:px-6",
+      className
+    )}
+    {...props}
+  />
+));
+ModalScrollBody.displayName = "ModalScrollBody";
 
 export function ModalPage({ children }: PropsWithChildren) {
   const router = useRouter();
