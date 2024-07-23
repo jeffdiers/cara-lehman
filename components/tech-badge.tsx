@@ -1,97 +1,113 @@
-import {
-  SiAmazonwebservices,
-  SiCss3,
-  SiDocker,
-  SiGithub,
-  SiGo,
-  SiJavascript,
-  SiJest,
-  SiJquery,
-  SiLinux,
-  SiMongodb,
-  SiNetlify,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPostgresql,
-  SiReact,
-  SiRedux,
-  SiTailwindcss,
-  SiTypescript,
-} from "@icons-pack/react-simple-icons";
 import { Badge, type BadgeProps } from "./ui/badge";
+import {
+  IconAmazonwebservices,
+  IconBun,
+  IconCss3,
+  IconDocker,
+  IconGithub,
+  IconGo,
+  IconJavascript,
+  IconJest,
+  IconJquery,
+  IconLinux,
+  IconMongodb,
+  IconNetlify,
+  IconNextdotjs,
+  IconNodedotjs,
+  IconNpm,
+  IconPostgresql,
+  IconReact,
+  IconRedux,
+  IconTailwindcss,
+  IconTypescript,
+  IconYarn,
+} from "./icons";
+import { Icon } from "./stories/button.stories";
 
 export const MY_STACK = {
-  react: {
-    icon: SiReact,
-    text: "React.js",
-  },
-  redux: {
-    icon: SiRedux,
-    text: "Redux",
-  },
   javascript: {
-    icon: SiJavascript,
+    icon: IconJavascript,
     text: "JavaScript",
   },
+  react: {
+    icon: IconReact,
+    text: "React.js",
+  },
   typescript: {
-    icon: SiTypescript,
+    icon: IconTypescript,
     text: "TypeScript",
   },
-  jest: {
-    icon: SiJest,
-    text: "Jest",
-  },
-  go: {
-    icon: SiGo,
-    text: "Go",
-  },
-  css3: {
-    icon: SiCss3,
-    text: "CSS3",
-  },
-  postgres: {
-    icon: SiPostgresql,
-    text: "Postgres",
-  },
-  mongodb: {
-    icon: SiMongodb,
-    text: "MongoDB",
-  },
-  nextjs: {
-    icon: SiNextdotjs,
-    text: "Next.js",
-  },
-  tailwind: {
-    icon: SiTailwindcss,
-    text: "Tailwind CSS",
-  },
-  linux: {
-    icon: SiLinux,
-    text: "Linux",
-  },
-  jquery: {
-    icon: SiJquery,
-    text: "jQuery",
-  },
   node: {
-    icon: SiNodedotjs,
+    icon: IconNodedotjs,
     text: "Node.js",
   },
-  github: {
-    icon: SiGithub,
-    text: "GitHub",
+  redux: {
+    icon: IconRedux,
+    text: "Redux",
+  },
+  nextjs: {
+    icon: IconNextdotjs,
+    text: "Next.js",
   },
   aws: {
-    icon: SiAmazonwebservices,
+    icon: IconAmazonwebservices,
     text: "AWS",
   },
   docker: {
-    icon: SiDocker,
+    icon: IconDocker,
     text: "Docker",
   },
+  github: {
+    icon: IconGithub,
+    text: "GitHub",
+  },
+  jest: {
+    icon: IconJest,
+    text: "Jest",
+  },
+  css3: {
+    icon: IconCss3,
+    text: "CSS3",
+  },
+  tailwind: {
+    icon: IconTailwindcss,
+    text: "Tailwind CSS",
+  },
+  postgres: {
+    icon: IconPostgresql,
+    text: "Postgres",
+  },
+  mongodb: {
+    icon: IconMongodb,
+    text: "MongoDB",
+  },
+  linux: {
+    icon: IconLinux,
+    text: "Linux",
+  },
   netlify: {
-    icon: SiNetlify,
+    icon: IconNetlify,
     text: "Netlify",
+  },
+  npm: {
+    icon: IconNpm,
+    text: "NPM",
+  },
+  yarn: {
+    icon: IconYarn,
+    text: "Yarn",
+  },
+  go: {
+    icon: IconGo,
+    text: "Go",
+  },
+  bun: {
+    icon: IconBun,
+    text: "Bun",
+  },
+  jquery: {
+    icon: IconJquery,
+    text: "jQuery",
   },
 };
 

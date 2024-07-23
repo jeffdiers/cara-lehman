@@ -33,7 +33,7 @@ export default function AboutMePage() {
           </P>
           <div className="flex flex-col items-center gap-y-3 mb-2 mt-8">
             <H3>Technologies I Work With</H3>
-            <div className="flex flex-wrap gap-1 justify-center">
+            <div className="flex flex-wrap gap-2 justify-center">
               {Object.keys(MY_STACK).map(
                 (
                   badge // MY_STACK is an array of tech badges
