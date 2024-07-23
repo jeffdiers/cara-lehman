@@ -18,7 +18,7 @@ export default function ResumePage() {
             📄 Download PDF
           </a>
         </Button>
-        <div className="bg-white rounded-lg p-4 mt-8">
+        <div className="rounded-lg p-4 mt-8 border">
           <Resume />
         </div>
       </ModalScrollBody>

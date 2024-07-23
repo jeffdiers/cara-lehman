@@ -2,12 +2,12 @@ import React from "react";
 
 export function Resume() {
   return (
-    <div className="container mx-auto p-4">
-      <div className="text-center mb-8">
+    <div className="container mx-auto p-4 flex flex-col text-start">
+      <div className="text-start mb-8">
         <h1 className="text-4xl font-bold">Jeff Diers – Software Engineer</h1>
         <p>New York, NY</p>
+        <p>720-987-3868</p>
         <p>
-          720-987-3868,{" "}
           <a href="mailto:jeff.diers@gmail.com">jeff.diers@gmail.com</a>
         </p>
         <p>
@@ -19,7 +19,9 @@ export function Resume() {
           >
             www.linkedin.com/in/jeffdiers
           </a>{" "}
-          | GitHub:{" "}
+        </p>
+        <p>
+          GitHub:{" "}
           <a
             href="https://github.com/jeffdiers"
             target="_blank"
@@ -27,7 +29,9 @@ export function Resume() {
           >
             github.com/jeffdiers
           </a>{" "}
-          | Web:{" "}
+        </p>
+        <p>
+          Web:{" "}
           <a
             href="http://www.jeffdiers.com"
             target="_blank"
@@ -59,7 +63,7 @@ export function Resume() {
             Senior Software Engineer – Product Team – New York, NY (10/2023 –
             present)
           </p>
-          <ul className="list-disc list-inside">
+          <ul className="list-disc pl-4">
             <li>
               Member of a core product team at an early-stage, high-paced
               startup, responsible for developing and maintaining a
@@ -91,7 +95,7 @@ export function Resume() {
             Senior Software Engineer – Platform Team – New York, NY (01/2022 –
             03/2023)
           </p>
-          <ul className="list-disc list-inside">
+          <ul className="list-disc pl-4">
             <li>
               Member of a core digital transformation team specializing in
               creating platforms that support the acceleration of sustainable,
@@ -124,7 +128,7 @@ export function Resume() {
             Software Engineer – Video Technology – Denver, CO (10/2018 –
             09/2021)
           </p>
-          <ul className="list-disc list-inside">
+          <ul className="list-disc pl-4">
             <li>
               Member of the Video Technology team that is responsible for
               developing and operating video streaming services for a dedicated
@@ -160,7 +164,7 @@ export function Resume() {
           <p className="italic">
             Software Engineer – Denver, CO (10/2017 – 10/2018)
           </p>
-          <ul className="list-disc list-inside">
+          <ul className="list-disc pl-4">
             <li>
               Member of a creative, high-paced startup developing video
               advertising software following the Agile workflow.
@@ -184,32 +188,35 @@ export function Resume() {
 
       <section className="mb-8">
         <h2 className="text-2xl font-bold mb-4">SKILLS</h2>
-        <ul className="list-disc list-inside">
-          <li>JavaScript ES6</li>
-          <li>TypeScript</li>
-          <li>Go</li>
-          <li>CSS3</li>
-          <li>SQL</li>
-          <li>MongoDB</li>
-          <li>React.js</li>
-          <li>Next.js</li>
-          <li>jQuery</li>
-          <li>Redis</li>
-          <li>Node.js</li>
-          <li>Tailwind CSS</li>
-          <li>Linux</li>
-          <li>Jira</li>
-          <li>GitHub</li>
-          <li>AWS</li>
-          <li>Serverless (lambda)</li>
-          <li>Docker</li>
-        </ul>
+        <div className="grid grid-cols-3 gap-4 pl-4">
+          <ul className="list-disc col-span-1">
+            <li>JavaScript ES6</li>
+            <li>TypeScript</li>
+            <li>Go</li>
+            <li>SQL</li>
+            <li>MongoDB</li>
+          </ul>
+          <ul className="list-disc col-span-1">
+            <li>React.js</li>
+            <li>Next.js</li>
+            <li>jQuery</li>
+            <li>Redis</li>
+            <li>Node.js</li>
+          </ul>
+          <ul className="list-disc col-span-1">
+            <li>Tailwind CSS</li>
+            <li>CSS3</li>
+            <li>Linux</li>
+            <li>Jira</li>
+            <li>GitHub</li>
+          </ul>
+        </div>
       </section>
 
       <section>
         <h2 className="text-2xl font-bold mb-4">EDUCATION</h2>
         <p>Galvanize, Denver, CO (11/2016 – 04/2017)</p>
-        <ul className="list-disc list-inside mb-4">
+        <ul className="list-disc mb-4 pl-4">
           <li>Intensive web development program.</li>
           <li>
             Trained on front-end and back-end technologies, to build
@@ -218,7 +225,7 @@ export function Resume() {
           </li>
         </ul>
         <p>University of Colorado, Colorado Springs (2011 – 2013)</p>
-        <ul className="list-disc list-inside">
+        <ul className="list-disc pl-4">
           <li>Mechanical Engineering.</li>
         </ul>
       </section>
