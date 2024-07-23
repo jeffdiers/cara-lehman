@@ -1,2 +1,2 @@
 [functions]
-  included_files = ["!node_modules/@react-pdf-viewer/core/**/*"]
+  included_files = ["!node_modules/@react-pdf-viewer/core/**/*", "!node_modules/@storybook/**/*"]
