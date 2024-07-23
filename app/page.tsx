@@ -1,34 +1,43 @@
 import { HomeCard, HomeCardProps } from "@/components/home-card";
+import { IconGamepadLine } from "@/components/icons";
 import { H1, P } from "@/components/ui/typography";
+import {
+  DashboardIcon,
+  DownloadIcon,
+  ExternalLinkIcon,
+  EyeOpenIcon,
+  FileTextIcon,
+  PersonIcon,
+} from "@radix-ui/react-icons";
 
 const cardLinksData: Omit<HomeCardProps, "number">[] = [
   {
     href: "/about-me",
-    icon: "PersonIcon",
+    icon: PersonIcon,
     title: "About Me",
     badges: ["Bio", "Contact", "My stack"],
-    secondaryIcons: ["EyeOpenIcon"],
+    secondaryIcon: EyeOpenIcon,
   },
   {
     href: "/drug-wars",
-    icon: "RiGamepadLine",
+    icon: IconGamepadLine,
     title: "Drug Wars",
     badges: ["Game", "Development"],
-    secondaryIcons: ["EyeOpenIcon"],
+    secondaryIcon: EyeOpenIcon,
   },
   {
     href: "/resume",
-    icon: "FileTextIcon",
+    icon: FileTextIcon,
     title: "Resume",
     badges: ["PDF", "Download"],
-    secondaryIcons: ["DownloadIcon"],
+    secondaryIcon: DownloadIcon,
   },
   {
     href: "#",
-    icon: "DashboardIcon",
+    icon: DashboardIcon,
     title: "Storybook",
     badges: ["UI", "Design", "Development"],
-    secondaryIcons: ["ExternalLinkIcon"],
+    secondaryIcon: ExternalLinkIcon,
   },
 ];
 
@@ -52,7 +61,7 @@ export default function Home() {
             icon={card.icon}
             title={card.title}
             badges={card.badges}
-            secondaryIcons={card.secondaryIcons}
+            secondaryIcon={card.secondaryIcon}
             className={
               index === 0
                 ? "ml-4 md:ml-12"

@@ -87,6 +87,16 @@ const convertFilenameToComponentName = (filename) => {
   );
 };
 
+// Function to extract the first <path> element, including its content
+const extractPathElement = (svgContent) => {
+  const pathMatch = svgContent.match(/<path[\s\S]*?<\/path>/);
+  if (pathMatch) return pathMatch[0];
+
+  // Fallback to self-closing <path> element
+  const selfClosingPathMatch = svgContent.match(/<path.*?\/>/);
+  return selfClosingPathMatch ? selfClosingPathMatch[0] : "";
+};
+
 // Loop through each SVG file in the directory
 fs.readdirSync(svgDirectory).forEach((filename) => {
   if (filename.endsWith(".svg")) {
@@ -101,8 +111,7 @@ fs.readdirSync(svgDirectory).forEach((filename) => {
     const title = titleMatch ? titleMatch[1] : componentName;
 
     // Extract the path from the SVG content
-    const pathMatch = svgContent.match(/<path.*?\/>/);
-    const svgPath = pathMatch ? pathMatch[0] : "";
+    const svgPath = extractPathElement(svgContent);
 
     // Extract the fill color from the SVG content if exists
     const fillMatch = svgContent.match(/fill="(.*?)"/);

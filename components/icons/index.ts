@@ -2,6 +2,7 @@ export { default as IconAmazonwebservices } from './IconAmazonwebservices';
 export { default as IconBun } from './IconBun';
 export { default as IconCss3 } from './IconCss3';
 export { default as IconDocker } from './IconDocker';
+export { default as IconGamepadLine } from './IconGamepadLine';
 export { default as IconGithub } from './IconGithub';
 export { default as IconGo } from './IconGo';
 export { default as IconJavascript } from './IconJavascript';
