@@ -33,7 +33,7 @@ const cardLinksData: Omit<HomeCardProps, "number">[] = [
     secondaryIcon: DownloadIcon,
   },
   {
-    href: "#",
+    href: "/storybook",
     icon: DashboardIcon,
     title: "Storybook",
     badges: ["UI", "Design", "Development"],

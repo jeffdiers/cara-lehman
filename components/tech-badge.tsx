@@ -18,6 +18,7 @@ import {
   IconPostgresql,
   IconReact,
   IconRedux,
+  IconStorybook,
   IconTailwindcss,
   IconTypescript,
   IconYarn,
@@ -64,6 +65,10 @@ export const MY_STACK = {
   jest: {
     icon: IconJest,
     text: "Jest",
+  },
+  storybook: {
+    icon: IconStorybook,
+    text: "Storybook",
   },
   css3: {
     icon: IconCss3,

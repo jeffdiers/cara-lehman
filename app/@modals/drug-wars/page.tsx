@@ -88,7 +88,7 @@ export default function DrugWarsPage() {
           ))}
         </div>
 
-        <Button asChild variant="link" className="mt-2">
+        <Button asChild variant="link" className="mt-4">
           <a href="https://github.com/jeffdiers/drugwars" target="_blank">
             <IconGithub className="w-4 h-4 mr-1" /> View GitHub
           </a>

@@ -23,7 +23,7 @@ export const ModalScrollBody = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "flex flex-col items-center text-center h-full overflow-y-auto p-1 sm:px-6",
+      "flex flex-col items-center text-center h-full overflow-y-auto p-2 sm:px-16 pb-12",
       className
     )}
     {...props}
