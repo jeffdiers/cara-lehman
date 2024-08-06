@@ -2,6 +2,7 @@ import { HomeCard, HomeCardProps } from "@/components/home-card";
 import { IconGamepadLine } from "@/components/icons";
 import { H1, P } from "@/components/ui/typography";
 import {
+  BlendingModeIcon,
   DashboardIcon,
   DownloadIcon,
   ExternalLinkIcon,
@@ -31,6 +32,13 @@ const cardLinksData: Omit<HomeCardProps, "number">[] = [
     title: "Resume",
     badges: ["PDF", "Download"],
     secondaryIcon: DownloadIcon,
+  },
+  {
+    href: "/color-zen",
+    icon: BlendingModeIcon,
+    title: "Color Zen",
+    badges: ["UI", "Design", "Development"],
+    secondaryIcon: ExternalLinkIcon,
   },
   {
     href: "/storybook",
