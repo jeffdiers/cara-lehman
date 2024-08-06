@@ -61,7 +61,6 @@ export default function Home() {
             icon={card.icon}
             title={card.title}
             badges={card.badges}
-            secondaryIcon={card.secondaryIcon}
             className={
               index === 0
                 ? "ml-4 md:ml-12"
