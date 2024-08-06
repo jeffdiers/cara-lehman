@@ -10,7 +10,6 @@ export interface HomeCardProps {
   icon: IconType | any;
   title: string;
   badges: string[];
-  secondaryIcon: IconType | any;
   className?: string;
 }
 
@@ -20,7 +19,6 @@ export function HomeCard({
   icon: IconComponent,
   title,
   badges,
-  secondaryIcon: SecondaryIconComponent,
   className,
 }: HomeCardProps) {
   return (
@@ -29,7 +27,6 @@ export function HomeCard({
         <div className="flex justify-between items-start">
           <span className="font-caprasimo text-3xl">0{number}.</span>
           <div className="flex flex-col items-end text-right w-[65px] gap-y-2">
-            <SecondaryIconComponent className="h-5 w-5" />
             <IconComponent className="h-5 w-5 " />
           </div>
         </div>

@@ -15,6 +15,7 @@ export { default as IconNextdotjs } from './IconNextdotjs';
 export { default as IconNodedotjs } from './IconNodedotjs';
 export { default as IconNpm } from './IconNpm';
 export { default as IconPostgresql } from './IconPostgresql';
+export { default as IconPrisma } from './IconPrisma';
 export { default as IconReact } from './IconReact';
 export { default as IconRedux } from './IconRedux';
 export { default as IconStorybook } from './IconStorybook';

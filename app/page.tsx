@@ -1,12 +1,9 @@
 import { HomeCard, HomeCardProps } from "@/components/home-card";
 import { IconGamepadLine } from "@/components/icons";
-import { H1, P } from "@/components/ui/typography";
+import { H1 } from "@/components/ui/typography";
 import {
   BlendingModeIcon,
   DashboardIcon,
-  DownloadIcon,
-  ExternalLinkIcon,
-  EyeOpenIcon,
   FileTextIcon,
   PersonIcon,
 } from "@radix-ui/react-icons";
@@ -17,35 +14,30 @@ const cardLinksData: Omit<HomeCardProps, "number">[] = [
     icon: PersonIcon,
     title: "About Me",
     badges: ["Bio", "Contact", "My stack"],
-    secondaryIcon: EyeOpenIcon,
   },
   {
     href: "/drug-wars",
     icon: IconGamepadLine,
     title: "Drug Wars",
     badges: ["Game", "Development"],
-    secondaryIcon: EyeOpenIcon,
   },
   {
     href: "/resume",
     icon: FileTextIcon,
     title: "Resume",
     badges: ["PDF", "Download"],
-    secondaryIcon: DownloadIcon,
   },
   {
     href: "/color-zen",
     icon: BlendingModeIcon,
     title: "Color Zen",
     badges: ["UI", "Design", "Development"],
-    secondaryIcon: ExternalLinkIcon,
   },
   {
     href: "/storybook",
     icon: DashboardIcon,
     title: "Storybook",
     badges: ["UI", "Design", "Development"],
-    secondaryIcon: ExternalLinkIcon,
   },
 ];
 

@@ -16,6 +16,7 @@ import {
   IconNodedotjs,
   IconNpm,
   IconPostgresql,
+  IconPrisma,
   IconReact,
   IconRedux,
   IconStorybook,
@@ -81,6 +82,10 @@ export const MY_STACK = {
   postgres: {
     icon: IconPostgresql,
     text: "Postgres",
+  },
+  prisma: {
+    icon: IconPrisma,
+    text: "Prisma",
   },
   mongodb: {
     icon: IconMongodb,
