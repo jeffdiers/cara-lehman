@@ -16,16 +16,16 @@ const cardLinksData: Omit<HomeCardProps, "number">[] = [
     badges: ["Bio", "Contact", "My stack"],
   },
   {
-    href: "/drug-wars",
-    icon: IconGamepadLine,
-    title: "Drug Wars",
-    badges: ["Game", "Development"],
-  },
-  {
     href: "/resume",
     icon: FileTextIcon,
     title: "Resume",
     badges: ["PDF", "Download"],
+  },
+  {
+    href: "/drug-wars",
+    icon: IconGamepadLine,
+    title: "Drug Wars",
+    badges: ["Game", "Development"],
   },
   {
     href: "/color-zen",
