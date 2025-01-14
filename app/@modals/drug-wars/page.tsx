@@ -54,6 +54,7 @@ export default function DrugWarsPage() {
           alt="Drug Wars game screenshot"
           className="rounded-xl mt-8"
           priority
+          placeholder="blur"
         />
 
         <H3 className="mt-8">About the Game</H3>

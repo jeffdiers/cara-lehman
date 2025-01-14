@@ -18,6 +18,7 @@ export default function AboutMePage() {
           alt="Picture of Jeff Diers and his dog Bernie"
           className="rounded-full"
           priority
+          placeholder="blur"
         />
 
         <H3 className="mt-8">Jeff Diers</H3>
