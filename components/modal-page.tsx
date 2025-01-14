@@ -4,9 +4,9 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 import { useHistory } from "@/lib/history-context";
 import {
-  usePathname,
+  // usePathname,
   useRouter,
-  useSelectedLayoutSegments,
+  // useSelectedLayoutSegments,
 } from "next/navigation";
 import React from "react";
 import { PropsWithChildren, useEffect, useState } from "react";
@@ -34,8 +34,8 @@ ModalScrollBody.displayName = "ModalScrollBody";
 export function ModalPage({ children }: PropsWithChildren) {
   const router = useRouter();
   const history = useHistory();
-  const segments = useSelectedLayoutSegments("children");
-  const pathname = usePathname();
+  // const segments = useSelectedLayoutSegments("children");
+  // const pathname = usePathname();
 
   const path = `/`;
 

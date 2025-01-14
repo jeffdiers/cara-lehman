@@ -24,7 +24,6 @@ import {
   IconTypescript,
   IconYarn,
 } from "./icons";
-import { Icon } from "./stories/button.stories";
 
 export const MY_STACK = {
   javascript: {
