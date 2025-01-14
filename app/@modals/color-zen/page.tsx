@@ -37,6 +37,7 @@ export default function ColorZenPage() {
           alt="Color Zen screenshot"
           className="rounded-xl mt-8"
           priority
+          placeholder="blur"
         />
 
         <H3 className="mt-8">About the Project</H3>
