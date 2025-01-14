@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export function Resume() {
@@ -8,37 +9,37 @@ export function Resume() {
         <p>New York, NY</p>
         <p>720-987-3868</p>
         <p>
-          <a href="mailto:jeff.diers@gmail.com">jeff.diers@gmail.com</a>
+          <Link href="mailto:jeff.diers@gmail.com">jeff.diers@gmail.com</Link>
         </p>
         <p>
           LinkedIn:{" "}
-          <a
+          <Link
             href="https://www.linkedin.com/in/jeffdiers"
             target="_blank"
             rel="noopener noreferrer"
           >
             www.linkedin.com/in/jeffdiers
-          </a>{" "}
+          </Link>{" "}
         </p>
         <p>
           GitHub:{" "}
-          <a
+          <Link
             href="https://github.com/jeffdiers"
             target="_blank"
             rel="noopener noreferrer"
           >
             github.com/jeffdiers
-          </a>{" "}
+          </Link>{" "}
         </p>
         <p>
           Web:{" "}
-          <a
+          <Link
             href="http://www.jeffdiers.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             www.jeffdiers.com
-          </a>
+          </Link>
         </p>
       </div>
 

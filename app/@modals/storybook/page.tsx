@@ -1,5 +1,3 @@
-"use client";
-
 import { IconStorybook } from "@/components/icons";
 import {
   ModalPage,
@@ -7,6 +5,7 @@ import {
   ModalScrollBody,
 } from "@/components/modal-page";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function StorybookPage() {
   return (
@@ -14,13 +13,13 @@ export default function StorybookPage() {
       <ModalPageTitle>Storybook</ModalPageTitle>
       <ModalScrollBody>
         <Button asChild variant="outline" className="text-xl">
-          <a
+          <Link
             href="https://main--66a50784f23a062eb31464f4.chromatic.com/"
             target="_blank"
           >
             <IconStorybook className="h-6 w-6 mr-2" color="default" /> View
             Storybook
-          </a>
+          </Link>
         </Button>
         <p className="mt-8">
           Here is a link to my Storybook where you can view some of the

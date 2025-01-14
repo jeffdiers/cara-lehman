@@ -1,5 +1,3 @@
-"use client";
-
 import {
   ModalPage,
   ModalPageTitle,
@@ -7,6 +5,7 @@ import {
 } from "@/components/modal-page";
 import { Resume } from "@/components/resume";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function ResumePage() {
   return (
@@ -14,9 +13,9 @@ export default function ResumePage() {
       <ModalPageTitle>Resume</ModalPageTitle>
       <ModalScrollBody>
         <Button asChild variant="outline" className="text-xl">
-          <a href="/Jeff_Diers-Resume-2024.pdf" download>
+          <Link href="/Jeff_Diers-Resume-2024.pdf" download>
             📄 Download PDF
-          </a>
+          </Link>
         </Button>
         <div className="rounded-lg p-4 mt-8 border">
           <Resume />
