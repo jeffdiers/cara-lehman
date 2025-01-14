@@ -4,6 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Providers } from "@/components/providers";
 import { Footer, Header } from "@/components/nav-menus";
+import Image from "next/image";
+import background from "@/public/background.png";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const caprasimo = Caprasimo({
@@ -33,7 +35,19 @@ export default function RootLayout({
           inter.variable
         )}
       >
-        <main className="relative flex flex-col justify-between bg-background text-foreground min-h-screen">
+        <main className="relative flex flex-col justify-between bg-background/75 text-foreground min-h-screen">
+          {/* Background Image */}
+          <Image
+            src={background} // Replace with the actual image path
+            alt="Background"
+            layout="fill" // Makes the image cover the entire parent container
+            objectFit="cover" // Ensures the image covers the container
+            objectPosition="center" // Optional: center the image
+            priority // Optional: prioritize loading for background images
+            className="-z-10" // Ensures the image is behind all content
+            placeholder="blur" // Optional: blur the image while loading
+          />
+
           <Providers>
             <Header />
 
