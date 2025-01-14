@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { H3 } from "@/components/ui/typography";
 import { BlendingModeIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
+import colorZenScreenshot from "@/public/color_zen_screenshot.webp";
 
 const TECH_STACK: TECH_STACK_NAME[] = [
   "react",
@@ -32,11 +33,10 @@ export default function ColorZenPage() {
         </Button>
 
         <Image
-          src="/color-zen-screenshot.png"
+          src={colorZenScreenshot}
           alt="Color Zen screenshot"
-          width={1550}
-          height={912}
           className="rounded-xl mt-8"
+          priority
         />
 
         <H3 className="mt-8">About the Project</H3>

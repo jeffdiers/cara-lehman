@@ -8,6 +8,7 @@ import {
 import Image from "next/image";
 import { MY_STACK, TechBadge } from "@/components/tech-badge";
 import { H3, P } from "@/components/ui/typography";
+import meAndBernie from "@/public/me_and_bernie.webp";
 
 export default function AboutMePage() {
   return (
@@ -15,11 +16,10 @@ export default function AboutMePage() {
       <ModalPageTitle>About Me</ModalPageTitle>
       <ModalScrollBody>
         <Image
-          src="/me_and_bernie.jpeg"
+          src={meAndBernie}
           alt="Picture of Jeff Diers and his dog Bernie"
-          width={150}
-          height={150}
           className="rounded-full"
+          priority
         />
 
         <H3 className="mt-8">Jeff Diers</H3>

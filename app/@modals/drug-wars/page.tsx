@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { TECH_STACK_NAME, TechBadge } from "@/components/tech-badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import drugWarsScreenshot from "@/public/drug_wars_screenshot.webp";
 import { IconGithub } from "@/components/icons";
 
 const FEATURES = [
@@ -50,11 +51,10 @@ export default function DrugWarsPage() {
         </Button>
 
         <Image
-          src="/drug_wars_screenshot.jpg"
+          src={drugWarsScreenshot}
           alt="Drug Wars game screenshot"
-          width={1550}
-          height={912}
           className="rounded-xl mt-8"
+          priority
         />
 
         <H3 className="mt-8">About the Game</H3>
