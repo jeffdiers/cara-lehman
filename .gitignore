@@ -40,3 +40,8 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# Storybook
+build-storybook.log
+automigrate-storybook.log
+doctor-storybook.log
