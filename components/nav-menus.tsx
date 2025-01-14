@@ -77,7 +77,7 @@ export function Header() {
     return () => clearInterval(timer);
   }, []);
   return (
-    <header className="sticky items-center top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky items-center top-0 z-50 w-full">
       <div className="container p-4 px-4 md:px-12 flex justify-end items-center w-full">
         <div className="flex items-center justify-center space-x-3 font-caprasimo italic mr-2">
           <span>Brooklyn, NY</span>
