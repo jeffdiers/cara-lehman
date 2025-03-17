@@ -18,6 +18,7 @@ interface BaseWorkLink {
   title: string;
   role: Role | Role[];
   description?: string;
+  img?: string;
 }
 
 export interface WorkLinkWithDepartment extends BaseWorkLink {
@@ -36,28 +37,24 @@ type WorkLinks = WorkLink[];
 export const projectsData: WorkLinks = [
   {
     department: "Directing & Producing",
+    role: ["Producer", "1st Assistant Camera"],
+    title: "Mesopotamia, TX",
+    links: "https://vimeo.com/1039319180",
+    description: "Screening available upon request ",
+  },
+  {
+    department: "Directing & Producing",
     role: "Producer",
     title: "Fabuwood 2024",
+    img: "/fabuwood-still.webp",
     links:
       "https://app.frame.io/presentations/bdeedf83-c341-4965-8c36-5fe570e19efe",
   },
   {
     department: "Directing & Producing",
     role: "Director",
-    title: "Dan & Darci Rock Tumbler",
-    links: "https://vimeo.com/manage/videos/396218489",
-  },
-  {
-    department: "Directing & Producing",
-    role: "Director",
     title: "Chip Chop Media Promo",
     links: "https://vimeo.com/manage/videos/396218460",
-  },
-  {
-    department: "Directing & Producing",
-    role: ["Director", "Editor"],
-    title: "Large Sports Balls by Neliblu",
-    links: "https://vimeo.com/manage/videos/482079657",
   },
   {
     department: "Directing & Producing",
@@ -72,6 +69,12 @@ export const projectsData: WorkLinks = [
     title: "How to Build a Business That Can Scale Beyond You",
     links:
       "https://www.youtube.com/watch?v=EvtUHphBc8g&list=PLI9oSSNkpgTljqaXAaSlP2KyBddS9PodT&index=7",
+  },
+  {
+    department: "Directing & Producing",
+    role: "Director",
+    title: "Dan & Darci Rock Tumbler",
+    links: "https://vimeo.com/manage/videos/396218489",
   },
   {
     department: "Camera Department",
@@ -217,12 +220,5 @@ export const projectsData: WorkLinks = [
     role: ["2nd Assistant Camera", "DIT"],
     links:
       "https://app.frame.io/presentations/49a43cd3-094a-405a-a97d-61fac7a49d97",
-  },
-  {
-    department: "Camera Department",
-    role: ["Producer", "1st Assistant Camera"],
-    title: "Mesopotamia, TX",
-    links: "https://vimeo.com/1039319180",
-    description: "Screening available upon request ",
   },
 ];

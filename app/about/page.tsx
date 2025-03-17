@@ -6,9 +6,10 @@ import { Button } from "@/components/ui/button";
 
 export default function AboutMe() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="pt-12 md:pt-24">
       <Header />
-      <main className="container mx-auto px-4 py-12 md:py-24">
+
+      <main className="container mx-auto px-4 py-12">
         <div className="flex flex-col items-center gap-12 md:flex-row md:items-center">
           {/* Image Section */}
           <div className="w-full flex-shrink-0 items-center justify-center md:w-1/3">
@@ -80,7 +81,7 @@ export default function AboutMe() {
             {Array.from({ length: 6 }).map((_, index) => (
               <div key={index} className="relative aspect-square h-full w-full">
                 <Image
-                  src={`/gallery-${index + 1}.webp`}
+                  src={`/gallery/gallery-${index + 1}.webp`}
                   alt={`Gallery Image ${index + 1}`}
                   fill
                   className="object-cover"
@@ -91,6 +92,15 @@ export default function AboutMe() {
           </div>
         </section>
       </main>
+
+      {/* Footer */}
+      <footer className="border-t bg-background py-6">
+        <div className="container mx-auto px-4 text-center md:px-6">
+          <p className="text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} Cara Lehman. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
