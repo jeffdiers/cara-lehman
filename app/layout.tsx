@@ -4,8 +4,6 @@ import { Geist, Geist_Mono, Taviraj } from "next/font/google";
 
 import { ThemeProvider } from "@/providers/theme-provider";
 
-import { Header } from "@/components/header";
-
 import "./globals.css";
 
 const tavirajSerif = Taviraj({

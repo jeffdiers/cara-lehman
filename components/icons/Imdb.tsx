@@ -1,15 +1,15 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { type IconProps, type IconType } from './types';
+import { type IconProps, type IconType } from "./types";
 
-const defaultColor = '#F5C518';
+const defaultColor = "#F5C518";
 
 const IMDb: IconType = React.forwardRef<SVGSVGElement, IconProps>(
   function IMDbSVG(
-    { title = 'IMDb', color = 'currentColor', size = 24, ...others },
+    { title = "IMDb", color = "currentColor", size = 24, ...others },
     ref,
   ) {
-    if (color === 'default') {
+    if (color === "default") {
       color = defaultColor;
     }
 

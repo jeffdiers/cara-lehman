@@ -50,29 +50,29 @@
   --radius: 0.625rem;
 
   /* Background and Foreground */
-  --background: oklch(0.88 0.07 120); /* Muted Green */
+  --background: oklch(0.939 0.025 80.2); /* #f5ebe0 */
   --foreground: oklch(0.3 0.07 10); /* Deep Brown */
 
   /* Card & Popover */
-  --card: oklch(0.96 0.14 80); /* Warm Beige */
+  --card: oklch(0.839 0.053 121.4); /* #c9cba3 */
   --card-foreground: oklch(0.3 0.07 10); /* Deep Brown */
-  --popover: oklch(0.96 0.14 80);
+  --popover: oklch(0.7 0.12 40);
   --popover-foreground: oklch(0.3 0.07 10);
 
   /* Primary & Secondary */
-  --primary: oklch(0.7 0.22 40); /* Vibrant Red-Orange */
-  --primary-foreground: oklch(0.96 0.14 80); /* Warm Beige */
-  --secondary: oklch(0.96 0.14 80); /* Warm Beige */
-  --secondary-foreground: oklch(0.7 0.22 40);
+  --primary: oklch(0.7 0.12 40); /* #ffe1a8 */
+  --primary-foreground: oklch(0.256 0.071 12.3); /* #723d46 */
+  --secondary: oklch(0.839 0.053 121.4); /* #c9cba3 */
+  --secondary-foreground: oklch(0.3 0.07 10);
 
   /* Muted & Accent */
-  --muted: oklch(0.96 0.14 80); /* Soft Beige */
+  --muted: oklch(0.96 0.07 80.2); /* #ffe1a8 */
   --muted-foreground: oklch(0.45 0.08 20); /* Burgundy */
-  --accent: oklch(0.96 0.14 80);
-  --accent-foreground: oklch(0.7 0.22 40);
+  --accent: oklch(0.939 0.04 80.2); /* #ffe1a8 */
+  --accent-foreground: oklch(0.45 0.08 20);
 
   /* Borders & Inputs */
-  --border: oklch(0.45 0.08 20);
+  --border: oklch(0.896 0.031 84.6); /* #d6ccc2 */
   --input: oklch(0.45 0.08 20);
   --ring: oklch(0.7 0.22 40);
 
@@ -148,4 +148,60 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+h1 {
+  @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+}
+
+h2 {
+  @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight;
+}
+
+h3 {
+  @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+}
+
+h4 {
+  @apply scroll-m-20 text-xl font-semibold tracking-tight;
+}
+
+h5 {
+  @apply scroll-m-20 text-lg font-semibold tracking-tight;
+}
+
+h6 {
+  @apply scroll-m-20 font-semibold tracking-tight;
+}
+
+p {
+  @apply leading-7 font-extralight;
+}
+
+blockquote {
+  @apply border-l-2 pl-6 italic;
+}
+
+tr {
+  @apply m-0 p-0 even:bg-muted;
+}
+
+th {
+  @apply px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right;
+}
+
+td {
+  @apply px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+}
+
+code {
+  @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+}
+
+small {
+  @apply text-sm leading-none font-medium;
+}
+
+button {
+  @apply hover:cursor-pointer;
 }

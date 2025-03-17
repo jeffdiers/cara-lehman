@@ -1,6 +1,6 @@
 export function getEmbedUrl(url: string): string | null {
   // YouTube
-  if (url.includes('youtube.com') || url.includes('youtu.be')) {
+  if (url.includes("youtube.com") || url.includes("youtu.be")) {
     const videoId = extractYouTubeId(url);
     if (videoId) {
       return `https://www.youtube.com/embed/${videoId}`;
@@ -8,7 +8,7 @@ export function getEmbedUrl(url: string): string | null {
   }
 
   // Vimeo
-  if (url.includes('vimeo.com')) {
+  if (url.includes("vimeo.com")) {
     const videoId = extractVimeoId(url);
     if (videoId) {
       return `https://player.vimeo.com/video/${videoId}`;
@@ -16,12 +16,12 @@ export function getEmbedUrl(url: string): string | null {
   }
 
   // Frame.io - return as is, will open in new tab
-  if (url.includes('frame.io')) {
+  if (url.includes("frame.io")) {
     return url;
   }
 
   // Instagram - can't embed directly, will open in new tab
-  if (url.includes('instagram.com')) {
+  if (url.includes("instagram.com")) {
     return url;
   }
 
@@ -43,8 +43,8 @@ function extractVimeoId(url: string): string | null {
 
 export function canEmbed(url: string): boolean {
   return (
-    url.includes('youtube.com') ||
-    url.includes('youtu.be') ||
-    url.includes('vimeo.com')
+    url.includes("youtube.com") ||
+    url.includes("youtu.be") ||
+    url.includes("vimeo.com")
   );
 }

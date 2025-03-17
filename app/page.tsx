@@ -4,9 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { navigationLinks } from "@/components/header";
-import IMDb from "@/components/icons/Imdb";
-import Instagram from "@/components/icons/Instagram";
-import LinkedIn from "@/components/icons/LinkedIn";
+import { SocialLinks } from "@/components/social-links";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export const metadata = {
@@ -43,7 +41,7 @@ export default function Home() {
 
         {/* Intro text */}
         <p className="mb-12 text-xl text-amber-200/90 md:text-2xl">
-          Visual storytelling through photography and cinematography
+          Visual storytelling - Film / TV / Commercial / Social / Photography
         </p>
 
         {/* Navigation links */}
@@ -60,30 +58,7 @@ export default function Home() {
         </nav>
 
         {/* Social media links */}
-        <div className="mt-12 flex items-center justify-center gap-6">
-          <Link
-            href="https://www.instagram.com/caramariee/"
-            target="_blank"
-            aria-label="Instagram"
-            className="transition-opacity hover:opacity-80"
-          >
-            <Instagram />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/cara-lehman-7621a5163/"
-            aria-label="LinkedIn"
-            className="transition-opacity hover:opacity-80"
-          >
-            <LinkedIn />
-          </Link>
-          <Link
-            href="https://www.imdb.com/name/nm10593245/"
-            aria-label="IMDb"
-            className="transition-opacity hover:opacity-80"
-          >
-            <IMDb />
-          </Link>
-        </div>
+        <SocialLinks />
       </div>
     </main>
   );

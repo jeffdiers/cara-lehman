@@ -8,7 +8,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { VideoModal } from "@/components/video-modal";
 
-import { projectsData } from "@/data/projects-data";
+import {
+  type WorkLink,
+  type WorkLinkWithDepartment,
+  projectsData,
+} from "@/data/projects-data";
 
 // Helper function to format roles
 const formatRoles = (roles: string | string[]): string => {
@@ -16,7 +20,7 @@ const formatRoles = (roles: string | string[]): string => {
 };
 
 // Helper function to check if a project has links
-const hasLinks = (project: any): project is { links: string | string[] } => {
+const hasLinks = (project: WorkLink): project is WorkLinkWithDepartment => {
   return "links" in project && project.links !== undefined;
 };
 
@@ -57,7 +61,7 @@ export default function WorkPage() {
 
       {/* Main content */}
       <main className="container mx-auto px-4 py-24 md:px-6">
-        <h1 className="mt-8 mb-12 text-4xl font-bold">Portfolio</h1>
+        <h1 className="mt-8 mb-12">Portfolio</h1>
 
         {/* Directing Section */}
         <section className="mb-20">
@@ -70,14 +74,13 @@ export default function WorkPage() {
                 className="group relative overflow-hidden rounded-lg border bg-card text-card-foreground shadow transition-all hover:shadow-lg"
               >
                 <div className="p-6">
-                  <h4 className="mb-2 text-xl font-medium">{project.title}</h4>
+                  <h4 className="mb-2">{project.title}</h4>
                   <div className="mb-4 text-sm text-muted-foreground">
                     {formatRoles(project.role)}
                   </div>
 
                   {hasLinks(project) && (
                     <Button
-                      variant="outline"
                       size="sm"
                       className="flex w-full items-center justify-center"
                       onClick={() =>
@@ -109,7 +112,7 @@ export default function WorkPage() {
                 className="group relative overflow-hidden rounded-lg border bg-card text-card-foreground shadow transition-all hover:shadow-lg"
               >
                 <div className="p-6">
-                  <h4 className="mb-2 text-xl font-medium">{project.title}</h4>
+                  <h4 className="mb-2">{project.title}</h4>
                   <div className="mb-4 text-sm text-muted-foreground">
                     {formatRoles(project.role)}
                   </div>
@@ -120,7 +123,6 @@ export default function WorkPage() {
                         project.links.map((link, i) => (
                           <Button
                             key={i}
-                            variant="outline"
                             size="sm"
                             className="flex w-full items-center justify-center"
                             onClick={() => openVideoModal(project.title, link)}
@@ -131,7 +133,6 @@ export default function WorkPage() {
                         ))
                       ) : (
                         <Button
-                          variant="outline"
                           size="sm"
                           className="flex w-full items-center justify-center"
                           onClick={() =>
@@ -152,7 +153,7 @@ export default function WorkPage() {
 
         {/* AS SEEN ON Section */}
         <section className="mb-20">
-          <h2 className="mb-8 border-b pb-2 text-3xl font-bold">As Seen On</h2>
+          <h2 className="mb-8 pb-2">As Seen On</h2>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {asSeenOnProjects.map((project, index) => (
@@ -161,7 +162,7 @@ export default function WorkPage() {
                 className="group relative overflow-hidden rounded-lg border bg-card text-card-foreground shadow transition-all hover:shadow-lg"
               >
                 <div className="p-6">
-                  <h4 className="mb-2 text-xl font-medium">{project.title}</h4>
+                  <h4 className="mb-2">{project.title}</h4>
                   <div className="mb-4 text-sm text-muted-foreground">
                     {formatRoles(project.role)}
                   </div>
@@ -180,7 +181,6 @@ export default function WorkPage() {
                   {hasLinks(project) && (
                     <div className="mt-4">
                       <Button
-                        variant="outline"
                         size="sm"
                         className="flex w-full items-center justify-center"
                         onClick={() =>

@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import { ExternalLink, X } from 'lucide-react';
+import { ExternalLink } from "lucide-react";
 
-import Link from 'next/link';
+import Link from "next/link";
 
-import { canEmbed, getEmbedUrl } from '@/lib/video-embed';
+import { canEmbed, getEmbedUrl } from "@/lib/video-embed";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
+} from "@/components/ui/dialog";
 
 interface VideoModalProps {
   isOpen: boolean;
@@ -28,30 +28,22 @@ export function VideoModal({ isOpen, onClose, title, url }: VideoModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[800px] max-h-[90vh] overflow-hidden flex flex-col">
+      <DialogContent className="flex max-h-[90vh] flex-col overflow-hidden sm:max-w-[800px]">
         <DialogHeader className="flex flex-row items-center justify-between">
           <div>
             <DialogTitle>{title}</DialogTitle>
             <DialogDescription>
-              {canEmbedVideo ? 'Video player' : 'External content'}
+              {canEmbedVideo ? "Video player" : "External content"}
             </DialogDescription>
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onClose}
-            className="h-8 w-8 rounded-full"
-          >
-            <X className="h-4 w-4" />
-          </Button>
         </DialogHeader>
 
-        <div className="flex-1 min-h-0 overflow-auto">
+        <div className="min-h-0 flex-1 overflow-auto">
           {canEmbedVideo && embedUrl ? (
-            <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-md">
+            <div className="relative h-0 overflow-hidden rounded-md pb-[56.25%]">
               <iframe
                 src={embedUrl}
-                className="absolute top-0 left-0 w-full h-full border-0"
+                className="absolute top-0 left-0 h-full w-full border-0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
