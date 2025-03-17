@@ -28,13 +28,13 @@ const hasLinks = (project: WorkLink): project is WorkLinkWithDepartment => {
 
 // Photo categories for filtering
 const categories = [
-  { id: "directing", name: "Producing & Directing" },
   { id: "camera", name: "Camera Department" },
+  { id: "directing", name: "Producing & Directing" },
   { id: "as-seen-on", name: "As Seen On" },
 ];
 
 export default function VideoPage() {
-  const [selectedCategory, setSelectedCategory] = useState("directing");
+  const [selectedCategory, setSelectedCategory] = useState("camera");
   const [selectedVideo, setSelectedVideo] = useState<{
     title: string;
     url: string;
@@ -75,11 +75,7 @@ export default function VideoPage() {
           <h1 className="mb-4">Video Portfolio</h1>
         </div>
 
-        <Tabs
-          value={selectedCategory}
-          defaultValue="directing"
-          className="w-full"
-        >
+        <Tabs value={selectedCategory} defaultValue="camera" className="w-full">
           {/* Category Filter */}
           <div className="mb-12 flex flex-wrap justify-center gap-2">
             {categories.map((category) => (
