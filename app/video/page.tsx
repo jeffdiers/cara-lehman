@@ -1,12 +1,12 @@
 "use client";
 
-import { Camera, Clapperboard, Film, Play, Video } from "lucide-react";
+import { Clapperboard, Film, Video } from "lucide-react";
 import { useState } from "react";
 
 import { Header } from "@/components/header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { VideoCard } from "@/components/video-card";
 import { VideoModal } from "@/components/video-modal";
 
@@ -56,9 +56,9 @@ export default function VideoPage() {
   );
 
   // Function to handle opening the video modal
-  const openVideoModal = (title: string, url: string) => {
-    setSelectedVideo({ title, url });
-  };
+  // const openVideoModal = (title: string, url: string) => {
+  //   setSelectedVideo({ title, url });
+  // };
 
   // Function to close the video modal
   const closeVideoModal = () => {
