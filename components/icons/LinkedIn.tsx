@@ -1,15 +1,15 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { type IconType, type IconProps } from "./types";
+import { type IconProps, type IconType } from './types';
 
-const defaultColor = "#2867B2";
+const defaultColor = '#2867B2';
 
 const LinkedIn: IconType = React.forwardRef<SVGSVGElement, IconProps>(
   function LinkedInSVG(
-    { title = "LinkedIn", color = "currentColor", size = 24, ...others },
+    { title = 'LinkedIn', color = 'currentColor', size = 24, ...others },
     ref,
   ) {
-    if (color === "default") {
+    if (color === 'default') {
       color = defaultColor;
     }
 

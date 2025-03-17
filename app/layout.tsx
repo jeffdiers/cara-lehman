@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
-import { Taviraj, Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+
+import { Geist, Geist_Mono, Taviraj } from "next/font/google";
+
 import { ThemeProvider } from "@/providers/theme-provider";
+
+import { Header } from "@/components/header";
+
+import "./globals.css";
 
 const tavirajSerif = Taviraj({
   variable: "--font-tavira-sans",
@@ -18,7 +23,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Cara Lehman",
-  description: "Visual storytelling through photography and cinematography",
+  description: "Visual storytelling through photography and cinematography ",
 };
 
 export default function RootLayout({

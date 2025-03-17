@@ -1,15 +1,15 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { type IconProps, type IconType } from "./types";
+import { type IconProps, type IconType } from './types';
 
-const defaultColor = "#FF0069";
+const defaultColor = '#FF0069';
 
 const Instagram: IconType = React.forwardRef<SVGSVGElement, IconProps>(
   function InstagramSVG(
-    { title = "Instagram", color = "currentColor", size = 24, ...others },
+    { title = 'Instagram', color = 'currentColor', size = 24, ...others },
     ref,
   ) {
-    if (color === "default") {
+    if (color === 'default') {
       color = defaultColor;
     }
 
