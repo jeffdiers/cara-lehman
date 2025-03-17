@@ -111,9 +111,10 @@ export default function VideoPage() {
                     className="group relative overflow-hidden rounded-lg border bg-card text-card-foreground shadow transition-all hover:shadow-lg"
                   >
                     <div className="p-6">
-                      <h4 className="mb-2 line-clamp-2 h-16">
-                        {project.title}
-                      </h4>
+                      <h4 className="mb-2">{project.title}</h4>
+                      {project.description && (
+                        <p className="mb-4">{project.description}</p>
+                      )}
                       <div className="mb-4 text-sm text-muted-foreground">
                         {formatRoles(project.role)}
                       </div>

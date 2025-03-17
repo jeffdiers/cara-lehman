@@ -40,7 +40,7 @@ export const projectsData: WorkLinks = [
     role: ["Producer", "1st Assistant Camera"],
     title: "Mesopotamia, TX",
     links: "https://vimeo.com/1039319180",
-    description: "Screening available upon request ",
+    description: "Screening available upon request.",
   },
   {
     department: "Directing & Producing",
@@ -198,6 +198,11 @@ export const projectsData: WorkLinks = [
     tags: ["As Seen On", "Feature Films"],
     title: "Ride or Die 2024",
     role: ["2nd Assistant Camera", "DIT"],
+  },
+  {
+    tags: ["As Seen On", "Fashion & TV"],
+    title: "Netflix: Aziz Ansari: Nightclub Comedian 2022",
+    role: "2nd Assistant Camera",
   },
   {
     tags: ["As Seen On", "Fashion & TV"],
