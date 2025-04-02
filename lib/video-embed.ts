@@ -3,7 +3,7 @@ export function getEmbedUrl(url: string): string | null {
   if (url.includes("youtube.com") || url.includes("youtu.be")) {
     const videoId = extractYouTubeId(url);
     if (videoId) {
-      return `https://www.youtube.com/embed/${videoId}`;
+      return `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
     }
   }
 
@@ -11,7 +11,7 @@ export function getEmbedUrl(url: string): string | null {
   if (url.includes("vimeo.com")) {
     const videoId = extractVimeoId(url);
     if (videoId) {
-      return `https://player.vimeo.com/video/${videoId}`;
+      return `https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0`;
     }
   }
 

@@ -13,12 +13,14 @@ type Role =
   | "Loader"
   | "Assistant Camera";
 type Tags = "As Seen On" | "Feature Films" | "Fashion & TV";
+type VideoType = "vimeo" | "youtube";
 
 interface BaseWorkLink {
   title: string;
   role: Role | Role[];
   description?: string;
   img?: string;
+  videoType?: VideoType;
 }
 
 export interface WorkLinkWithDepartment extends BaseWorkLink {
@@ -39,8 +41,15 @@ export const projectsData: WorkLinks = [
     department: "Directing & Producing",
     role: ["Producer", "1st Assistant Camera"],
     title: "Mesopotamia, TX",
-    links: "https://vimeo.com/1039319180",
+    links:
+      "https://player.vimeo.com/video/1039319180?badge=0&autopause=0&player_id=0&app_id=58479&controls=0&portrait=0&byline=0",
     description: "Screening available upon request.",
+  },
+  {
+    department: "Directing & Producing",
+    role: ["Producer", "Assistant Director"],
+    title: "Adidas Grandcourt Ad",
+    links: "https://youtu.be/KbiZgXdSu7o",
   },
   {
     department: "Directing & Producing",
@@ -69,12 +78,6 @@ export const projectsData: WorkLinks = [
     title: "How to Build a Business That Can Scale Beyond You",
     links:
       "https://www.youtube.com/watch?v=EvtUHphBc8g&list=PLI9oSSNkpgTljqaXAaSlP2KyBddS9PodT&index=7",
-  },
-  {
-    department: "Directing & Producing",
-    role: "Director",
-    title: "Dan & Darci Rock Tumbler",
-    links: "https://vimeo.com/manage/videos/396218489",
   },
   {
     department: "Camera Department",
@@ -169,11 +172,36 @@ export const projectsData: WorkLinks = [
       "https://www.youtube.com/watch?v=aiBvvOWRziY&list=PLI9oSSNkpgTljqaXAaSlP2KyBddS9PodT&index=8",
   },
   {
+    department: "Directing & Producing",
+    role: "Assistant Director",
+    title: "NyQuil Honey Stop Motion",
+    links:
+      "https://player.vimeo.com/video/496486186?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+  },
+  {
+    department: "Directing & Producing",
+    role: "Assistant Director",
+    title: "DayQuil Honey Snapchat Ad",
+    links: "https://vimeo.com/496486095?controls=0&portrait=0&byline=0",
+  },
+  {
+    department: "Directing & Producing",
+    role: "Producer",
+    title: "The First Muted Speaker in History — Goldcast Ad",
+    links: "https://vimeo.com/691165410",
+  },
+  {
     department: "Camera Department",
     role: "Camera Operator",
     title:
       "Marlon Craft - Somethin Wrong In Heaven (Live w/ Band) (Courtside Sessions)",
     links: "https://www.youtube.com/watch?v=JQXh3KAc_9k",
+  },
+  {
+    department: "Directing & Producing",
+    role: "Director",
+    title: "Dan & Darci Rock Tumbler",
+    links: "https://vimeo.com/manage/videos/396218489",
   },
   {
     department: "Camera Department",

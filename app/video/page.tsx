@@ -3,28 +3,13 @@
 import { Clapperboard, Film, Video } from "lucide-react";
 import { useState } from "react";
 
+import { ContentCard } from "@/components/content-card";
 import { Header } from "@/components/header";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
-import { VideoCard } from "@/components/video-card";
 import { VideoModal } from "@/components/video-modal";
 
-import {
-  type WorkLink,
-  type WorkLinkWithDepartment,
-  projectsData,
-} from "@/data/projects-data";
-
-// Helper function to format roles
-const formatRoles = (roles: string | string[]): string => {
-  return Array.isArray(roles) ? roles.join(", ") : roles;
-};
-
-// Helper function to check if a project has links
-const hasLinks = (project: WorkLink): project is WorkLinkWithDepartment => {
-  return "links" in project && project.links !== undefined;
-};
+import { projectsData } from "@/data/projects-data";
 
 // Photo categories for filtering
 const categories = [
@@ -75,7 +60,11 @@ export default function VideoPage() {
           <h1 className="mb-4">Video Portfolio</h1>
         </div>
 
-        <Tabs value={selectedCategory} defaultValue="camera" className="w-full">
+        <Tabs
+          value={selectedCategory}
+          defaultValue="directing"
+          className="w-full"
+        >
           {/* Category Filter */}
           <div className="mb-12 flex flex-wrap justify-center gap-2">
             {categories.map((category) => (
@@ -100,34 +89,9 @@ export default function VideoPage() {
                 <Clapperboard className="ml-3" />
               </h2>
 
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {directingProjects.map((project, index) => (
-                  <div
-                    key={index}
-                    className="group relative overflow-hidden rounded-lg border bg-card text-card-foreground shadow transition-all hover:shadow-lg"
-                  >
-                    <div className="p-6">
-                      <h4 className="mb-2">{project.title}</h4>
-                      {project.description && (
-                        <p className="mb-4">{project.description}</p>
-                      )}
-                      <div className="mb-4 text-sm text-muted-foreground">
-                        {formatRoles(project.role)}
-                      </div>
-
-                      {hasLinks(project) && (
-                        <div className="space-y-2">
-                          {Array.isArray(project.links) ? (
-                            project.links.map((link, i) => (
-                              <VideoCard key={i} url={link} img={project.img} />
-                            ))
-                          ) : (
-                            <VideoCard url={project.links} img={project.img} />
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  </div>
+                  <ContentCard key={index} project={project} />
                 ))}
               </div>
             </section>
@@ -141,31 +105,9 @@ export default function VideoPage() {
                 <Video className="ml-3" />
               </h2>
 
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {cameraDeptProjects.map((project, index) => (
-                  <div
-                    key={index}
-                    className="group relative overflow-hidden rounded-lg border bg-card text-card-foreground shadow transition-all hover:shadow-lg"
-                  >
-                    <div className="p-6">
-                      <h4 className="mb-2">{project.title}</h4>
-                      <div className="mb-4 text-sm text-muted-foreground">
-                        {formatRoles(project.role)}
-                      </div>
-
-                      {hasLinks(project) && (
-                        <div className="space-y-2">
-                          {Array.isArray(project.links) ? (
-                            project.links.map((link, i) => (
-                              <VideoCard key={i} url={link} />
-                            ))
-                          ) : (
-                            <VideoCard url={project.links} />
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  </div>
+                  <ContentCard key={index} project={project} />
                 ))}
               </div>
             </section>
@@ -179,42 +121,9 @@ export default function VideoPage() {
                 <Film className="ml-3" />
               </h2>
 
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {asSeenOnProjects.map((project, index) => (
-                  <div
-                    key={index}
-                    className="group relative overflow-hidden rounded-lg border bg-card text-card-foreground shadow transition-all hover:shadow-lg"
-                  >
-                    <div className="p-6">
-                      <h4 className="mb-2">{project.title}</h4>
-                      <div className="mb-4 text-sm text-muted-foreground">
-                        {formatRoles(project.role)}
-                      </div>
-
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {"tags" in project &&
-                          project.tags
-                            .filter((tag) => tag !== "As Seen On")
-                            .map((tag, i) => (
-                              <Badge key={i} variant="secondary">
-                                {tag}
-                              </Badge>
-                            ))}
-                      </div>
-
-                      {hasLinks(project) && (
-                        <div className="space-y-2">
-                          {Array.isArray(project.links) ? (
-                            project.links.map((link, i) => (
-                              <VideoCard key={i} url={link} />
-                            ))
-                          ) : (
-                            <VideoCard url={project.links} />
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  </div>
+                  <ContentCard key={index} project={project} />
                 ))}
               </div>
             </section>
